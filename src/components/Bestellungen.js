@@ -451,101 +451,101 @@ class Bestellungen extends Component {
 
 
     render() {
-		var bezeichnerErz = {
-			1:`${this.props.t('manufacturesnames.1')}`,
-			2:`${this.props.t('manufacturesnames.2')}`,
-			3:`${this.props.t('manufacturesnames.3')}`,
-			4:`${this.props.t('manufacturesnames.4')}`,
-			5:`${this.props.t('manufacturesnames.5')}`,
-			6:`${this.props.t('manufacturesnames.6')}`,
-			7:`${this.props.t('manufacturesnames.7')}`,
-			8:`${this.props.t('manufacturesnames.8')}`,
-			9:`${this.props.t('manufacturesnames.9')}`,
-			10:`${this.props.t('manufacturesnames.10')}`,
-			11:`${this.props.t('manufacturesnames.11')}`,
-			12:`${this.props.t('manufacturesnames.12')}`,
-			13:`${this.props.t('manufacturesnames.13')}`,
-			14:`${this.props.t('manufacturesnames.14')}`,
-			15:`${this.props.t('manufacturesnames.15')}`,
-			16:`${this.props.t('manufacturesnames.16')}`,
-			17:`${this.props.t('manufacturesnames.17')}`,
-			18:`${this.props.t('manufacturesnames.18')}`,
-			19:`${this.props.t('manufacturesnames.19')}`,
-			20:`${this.props.t('manufacturesnames.20')}`,
-			26:`${this.props.t('manufacturesnames.26')}`,
-			29:`${this.props.t('manufacturesnames.29')}`,
-			30:`${this.props.t('manufacturesnames.30')}`,
-			31:`${this.props.t('manufacturesnames.31')}`,
-			49:`${this.props.t('manufacturesnames.49')}`,
-			50:`${this.props.t('manufacturesnames.50')}`,
-			51:`${this.props.t('manufacturesnames.51')}`,
-			54:`${this.props.t('manufacturesnames.54')}`,
-			55:`${this.props.t('manufacturesnames.55')}`,
-			56:`${this.props.t('manufacturesnames.56')}`,
-		}
+			var bezeichnerErz = {
+				1:`${this.props.t('manufacturesnames.1')}`,
+				2:`${this.props.t('manufacturesnames.2')}`,
+				3:`${this.props.t('manufacturesnames.3')}`,
+				4:`${this.props.t('manufacturesnames.4')}`,
+				5:`${this.props.t('manufacturesnames.5')}`,
+				6:`${this.props.t('manufacturesnames.6')}`,
+				7:`${this.props.t('manufacturesnames.7')}`,
+				8:`${this.props.t('manufacturesnames.8')}`,
+				9:`${this.props.t('manufacturesnames.9')}`,
+				10:`${this.props.t('manufacturesnames.10')}`,
+				11:`${this.props.t('manufacturesnames.11')}`,
+				12:`${this.props.t('manufacturesnames.12')}`,
+				13:`${this.props.t('manufacturesnames.13')}`,
+				14:`${this.props.t('manufacturesnames.14')}`,
+				15:`${this.props.t('manufacturesnames.15')}`,
+				16:`${this.props.t('manufacturesnames.16')}`,
+				17:`${this.props.t('manufacturesnames.17')}`,
+				18:`${this.props.t('manufacturesnames.18')}`,
+				19:`${this.props.t('manufacturesnames.19')}`,
+				20:`${this.props.t('manufacturesnames.20')}`,
+				26:`${this.props.t('manufacturesnames.26')}`,
+				29:`${this.props.t('manufacturesnames.29')}`,
+				30:`${this.props.t('manufacturesnames.30')}`,
+				31:`${this.props.t('manufacturesnames.31')}`,
+				49:`${this.props.t('manufacturesnames.49')}`,
+				50:`${this.props.t('manufacturesnames.50')}`,
+				51:`${this.props.t('manufacturesnames.51')}`,
+				54:`${this.props.t('manufacturesnames.54')}`,
+				55:`${this.props.t('manufacturesnames.55')}`,
+				56:`${this.props.t('manufacturesnames.56')}`,
+			}
 
-		var bezeichnerKaufteile = {
-			21:`${this.props.t('partnames.21')}`,
-			22:`${this.props.t('partnames.22')}`,
-			23:`${this.props.t('partnames.23')}`,
-			24:`${this.props.t('partnames.24')}`,
-			25:`${this.props.t('partnames.25')}`,
-			27:`${this.props.t('partnames.27')}`,
-			28:`${this.props.t('partnames.28')}`,
-			32:`${this.props.t('partnames.32')}`,
-			33:`${this.props.t('partnames.33')}`,
-			34:`${this.props.t('partnames.34')}`,
-			35:`${this.props.t('partnames.35')}`,
-			36:`${this.props.t('partnames.36')}`,
-			37:`${this.props.t('partnames.37')}`,
-			38:`${this.props.t('partnames.38')}`,
-			39:`${this.props.t('partnames.39')}`,
-			40:`${this.props.t('partnames.40')}`,
-			41:`${this.props.t('partnames.41')}`,
-			42:`${this.props.t('partnames.42')}`,
-			43:`${this.props.t('partnames.43')}`,
-			44:`${this.props.t('partnames.44')}`,
-			45:`${this.props.t('partnames.45')}`,
-			46:`${this.props.t('partnames.46')}`,
-			47:`${this.props.t('partnames.47')}`,
-			48:`${this.props.t('partnames.48')}`,
-			52:`${this.props.t('partnames.52')}`,
-			53:`${this.props.t('partnames.53')}`,
-			57:`${this.props.t('partnames.57')}`,
-			58:`${this.props.t('partnames.58')}`,
-			59:`${this.props.t('partnames.59')}`,
-		}
+			var bezeichnerKaufteile = {
+				21:`${this.props.t('partnames.21')}`,
+				22:`${this.props.t('partnames.22')}`,
+				23:`${this.props.t('partnames.23')}`,
+				24:`${this.props.t('partnames.24')}`,
+				25:`${this.props.t('partnames.25')}`,
+				27:`${this.props.t('partnames.27')}`,
+				28:`${this.props.t('partnames.28')}`,
+				32:`${this.props.t('partnames.32')}`,
+				33:`${this.props.t('partnames.33')}`,
+				34:`${this.props.t('partnames.34')}`,
+				35:`${this.props.t('partnames.35')}`,
+				36:`${this.props.t('partnames.36')}`,
+				37:`${this.props.t('partnames.37')}`,
+				38:`${this.props.t('partnames.38')}`,
+				39:`${this.props.t('partnames.39')}`,
+				40:`${this.props.t('partnames.40')}`,
+				41:`${this.props.t('partnames.41')}`,
+				42:`${this.props.t('partnames.42')}`,
+				43:`${this.props.t('partnames.43')}`,
+				44:`${this.props.t('partnames.44')}`,
+				45:`${this.props.t('partnames.45')}`,
+				46:`${this.props.t('partnames.46')}`,
+				47:`${this.props.t('partnames.47')}`,
+				48:`${this.props.t('partnames.48')}`,
+				52:`${this.props.t('partnames.52')}`,
+				53:`${this.props.t('partnames.53')}`,
+				57:`${this.props.t('partnames.57')}`,
+				58:`${this.props.t('partnames.58')}`,
+				59:`${this.props.t('partnames.59')}`,
+			}
 
-		const { bestellungen, Reihenfolge } = this.state;
+			const { bestellungen, Reihenfolge } = this.state;
 
-		console.log('hibam')
-		console.log(bestellungen)
-		console.log(Reihenfolge)
+			console.log('hibam')
+			console.log(bestellungen)
+			console.log(Reihenfolge)
 
-		let reihenfolge_warehousestock_dict = localStorage.get('reihenfolge_warehousestock_dict')
-        let reihenfolge_waiting_items = localStorage.get('reihenfolge_waiting_items')
-        let reihenfolge_waiting_list = localStorage.get('reihenfolge_waiting_list')
-        let reihenfolge_new_warehousestock = localStorage.get('reihenfolge_new_warehousestock')
-        let reihenfolge_merge_periods = localStorage.get('reihenfolge_merge_periods')
-        let reihenfolge_warehousestock_after_using_demand = localStorage.get('reihenfolge_warehousestock_after_using_demand')
-		let reihenfolge_future_movement = localStorage.get('reihenfolge_future_movement')
-		let reihenfolge_warehousestock_after_movement = localStorage.get('reihenfolge_warehousestock_after_movement')
+			let reihenfolge_warehousestock_dict = localStorage.get('reihenfolge_warehousestock_dict')
+					let reihenfolge_waiting_items = localStorage.get('reihenfolge_waiting_items')
+					let reihenfolge_waiting_list = localStorage.get('reihenfolge_waiting_list')
+					let reihenfolge_new_warehousestock = localStorage.get('reihenfolge_new_warehousestock')
+					let reihenfolge_merge_periods = localStorage.get('reihenfolge_merge_periods')
+					let reihenfolge_warehousestock_after_using_demand = localStorage.get('reihenfolge_warehousestock_after_using_demand')
+			let reihenfolge_future_movement = localStorage.get('reihenfolge_future_movement')
+			let reihenfolge_warehousestock_after_movement = localStorage.get('reihenfolge_warehousestock_after_movement')
 
-		console.log('klatschen')
-		console.log(reihenfolge_warehousestock_after_movement)
-		console.log(reihenfolge_warehousestock_dict)
-		console.log(reihenfolge_waiting_items)
-		console.log(reihenfolge_waiting_list)
-		console.log(reihenfolge_new_warehousestock)
-		console.log(reihenfolge_merge_periods)
-		console.log(reihenfolge_warehousestock_after_using_demand)
-		console.log(reihenfolge_future_movement)
-		const { normal_range, deviation, discount_quantity } = this.state;
+			console.log('klatschen')
+			console.log(reihenfolge_warehousestock_after_movement)
+			console.log(reihenfolge_warehousestock_dict)
+			console.log(reihenfolge_waiting_items)
+			console.log(reihenfolge_waiting_list)
+			console.log(reihenfolge_new_warehousestock)
+			console.log(reihenfolge_merge_periods)
+			console.log(reihenfolge_warehousestock_after_using_demand)
+			console.log(reihenfolge_future_movement)
+			const { normal_range, deviation, discount_quantity } = this.state;
 
 
-		let zahlen = [ 21, 22, 23 ,24 ,25 , 27 , 28 , 32 , 33, 34, 35 , 36 ,37 ,38 ,39 , 40 , 41 , 42 , 43 , 44 , 45 ,46, 47, 48, 52, 53 , 57, 58, 59]
+			let zahlen = [ 21, 22, 23 ,24 ,25 , 27 , 28 , 32 , 33, 34, 35 , 36 ,37 ,38 ,39 , 40 , 41 , 42 , 43 , 44 , 45 ,46, 47, 48, 52, 53 , 57, 58, 59]
 
-		let future_movement = {}
+			let future_movement = {}
 
 			Object.keys(reihenfolge_future_movement).map( number => {
 				future_movement[number] = {}
@@ -610,9 +610,6 @@ class Bestellungen extends Component {
 							if ( ankunft === 3 ) future_movement[number][3] = tmp;
 						}
 					}
-
-
-
 				})
 
 			})
@@ -624,252 +621,209 @@ class Bestellungen extends Component {
 
 		return (
 			<React.Fragment>
+				<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' }} >
+					<table style={{backgroundColor:'#c1c1bf',margin:'auto'}}>
+						<div style={{ border: '3px solid#f0f0f0'}}>
+						<tbody>
+							<tr>
+								<td style={{ padding:'5px 10px 10px 10px'}}>
+									<table style={{margin:'auto'}}>
+										<tbody>
+											<tr>
+											<td></td>
+											<td>{this.props.t('orders.article')}</td>
+											<td>{this.props.t('orders.amount')}</td>
+											<td>{this.props.t('orders.mode')}</td>
+											</tr>
+										{ console.log('bier')}
+										{ console.log(Reihenfolge)}
+										{ Reihenfolge && Reihenfolge.length > 0 && Reihenfolge.map( (element,index)=>
+										Object.keys(element).map( E =>
+											<tr>
+												{ console.log('element')}
+												{console.log( element)}
+												{ console.log('E', E)}
+												{console.log(bezeichnerKaufteile)}
+												{console.log(bezeichnerKaufteile[E])}
+												<td> {bezeichnerKaufteile[E]}</td>
+											<td><input style={{ margin: '0 5px 0 0 '}} tabIndex='-1' autoComplete='off' readOnly='true' size="4" name={E} value={E} maxLength="5" type="text" onChange={this.handleChange} /></td>
+											<td><input onFocus={this.handleFocus} min='1000' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" data-id={index} name={`${E}_menge`} value={Reihenfolge[index][E][`${E}_menge`]} maxLength="5" type="text" onChange={this.handleChange} /></td>
+											<td>
+												<select onFocus={this.handleFocus} onBlur={this.handleBlur} style={{height: '30px'}} name={`${E}_bestellart`} size="1" data-id={index} value={Reihenfolge[index][E][`${E}_bestellart`]} onChange={this.handleChange}>
+													<option value="Normal">Normal</option>
+													<option value="Eil">Eil</option>
+													<option value="JIT">JIT</option>
+													<option value="Billiganbieter">Billiganbieter</option>
+													<option value="Sonderbestellung">Sonderbestellung</option>
+												</select>
+												</td>
+												<td> <button id={index} onClick={this.deleteArticel}> {this.props.t('orders.buttondelete')} </button></td>
+											</tr>
+											)
+										)}
+									<tr >
+										<div style={{position:'relative'}}>
+										<br></br>
+										<button id='createButton' onClick={this.onCreateNewItem}>{this.props.t('orders.buttoncreate')} </button> {this.props.t('orders.textnewitem')}
+										</div>
+									</tr>
+									<tr>
+										<td> {bezeichnerKaufteile[this.state.newArtikel]}</td>
+										<td><input id='newArtikel' onChange={this.handleOnChangeNewArtikel}style={{ margin: '0 5px 0 0 '}} tabIndex='' autoComplete='off' size="4"  value={this.state.newArtikel} maxLength="5" type="text"  /></td>
+										<td><input onChange={this.handleOnChangeAmount} onFocus={this.handleFocus} id='new_artikel_amount' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" name={''} value={this.state.newMenge} maxLength="5" type="text"  /></td>
+										<td>
+											<select onChange={this.handleOnChangeOption} onFocus={this.handleFocus} id='new_artikel_option' onBlur={this.handleBlur} style={{height: '30px'}} name={''} size="1" value={this.state.newOption} >
+												<option value="Normal">Normal</option>
+												<option value="Eil">Eil</option>
+												<option value="JIT">JIT</option>
+												<option value="Billiganbieter">Billiganbieter</option>
+												<option value="Sonderbestellung">Sonderbestellung</option>
+											</select>	
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
+													background: 'rgb(250, 149, 129)',
+													border: '2px solid ghostwhite',
+													color: 'ghostwhite',
+												}}>
 
+											<Link style={{ color: 'ghostwhite' }}to='/Fertigungsaufträge'>
+												{this.props.t('orders.buttonback')}
+											</Link>
 
-	<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'
-
-}} >
- 							<table style={{backgroundColor:'#c1c1bf',margin:'auto'}}>
-							 <div style={{ border: '3px solid#f0f0f0'}}>
- 								<tbody>
-  								<tr>
-
-  									<td style={{ padding:'5px 10px 10px 10px'}}>
-    									<table style={{margin:'auto'}}>
-    										<tbody>
-    											<tr>
-													<td></td>
-													<td>{this.props.t('orders.article')}</td>
-													<td>{this.props.t('orders.amount')}</td>
-													<td>{this.props.t('orders.mode')}</td>
-    											</tr>
-												{ console.log('bier')}
-												{ console.log(Reihenfolge)}
-												{ Reihenfolge && Reihenfolge.length > 0 && Reihenfolge.map( (element,index)=>
-												Object.keys(element).map( E =>
-
-													<tr>
-														{ console.log('element')}
-														{console.log( element)}
-														{ console.log('E', E)}
-														{console.log(bezeichnerKaufteile)}
-														{console.log(bezeichnerKaufteile[E])}
-														<td> {bezeichnerKaufteile[E]}</td>
-													<td><input style={{ margin: '0 5px 0 0 '}} tabIndex='-1' autoComplete='off' readOnly='true' size="4" name={E} value={E} maxLength="5" type="text" onChange={this.handleChange} /></td>
-													<td><input onFocus={this.handleFocus} min='1000' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" data-id={index} name={`${E}_menge`} value={Reihenfolge[index][E][`${E}_menge`]} maxLength="5" type="text" onChange={this.handleChange} /></td>
-													<td>
-														<select onFocus={this.handleFocus} onBlur={this.handleBlur} style={{height: '30px'}} name={`${E}_bestellart`} size="1" data-id={index} value={Reihenfolge[index][E][`${E}_bestellart`]} onChange={this.handleChange}>
-															<option value="Normal">Normal</option>
-				<option value="Eil">Eil</option>
-				<option value="JIT">JIT</option>
-				<option value="Billiganbieter">Billiganbieter</option>
-				<option value="Sonderbestellung">Sonderbestellung</option>
-
-															</select>
-															 </td>
-															 <td> <button id={index} onClick={this.deleteArticel}> {this.props.t('orders.buttondelete')} </button></td>
-													   </tr>
-												 )
-												 )}
-{/*
-    											<tr>
-												     <td><input autoComplete='off' size="4" name="artikel_bestellung0" value={artikel_bestellung0 } maxLength="5" type="text" onChange={this.handleChange} /></td>
-												     <td><input autoComplete='off' size="4" name="menge_bestellung0" value={menge_bestellung0} maxLength="5" type="text" onChange={this.handleChange} /></td>
-												     <td>
-												     	<select style={{height: '30px'}} name="modus0" size="1" value={modus0} onChange={this.handleChange}>
-														     <option value="5">Normal(5)</option>
-<option value="4">Eil(4)</option>
-<option value="3">JIT(3)</option>
-<option value="2">Billiganbieter(2)</option>
-<option value="1">Sonderbestellung(1)</option>
-
-													     </select>
-  														</td>
-    												</tr> */}
-												<tr >
-
-													<div style={{position:'relative'}}>
-													<br></br>
-
-													<button id='createButton' onClick={this.onCreateNewItem}>{this.props.t('orders.buttoncreate')} </button> {this.props.t('orders.textnewitem')}
-													</div>
-												</tr>
-												<tr>
-													<td> {bezeichnerKaufteile[this.state.newArtikel]}</td>
-												<td><input id='newArtikel' onChange={this.handleOnChangeNewArtikel}style={{ margin: '0 5px 0 0 '}} tabIndex='' autoComplete='off' size="4"  value={this.state.newArtikel} maxLength="5" type="text"  /></td>
-													<td><input onChange={this.handleOnChangeAmount} onFocus={this.handleFocus} id='new_artikel_amount' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" name={''} value={this.state.newMenge} maxLength="5" type="text"  /></td>
-													<td>
-														<select onChange={this.handleOnChangeOption} onFocus={this.handleFocus} id='new_artikel_option' onBlur={this.handleBlur} style={{height: '30px'}} name={''} size="1" value={this.state.newOption} >
-															<option value="Normal">Normal</option>
-				<option value="Eil">Eil</option>
-				<option value="JIT">JIT</option>
-				<option value="Billiganbieter">Billiganbieter</option>
-				<option value="Sonderbestellung">Sonderbestellung</option>
-
-															</select>
-
-													</td>
-												</tr>
-
-												<tr>
-													<td>
-														<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
-																background: 'rgb(250, 149, 129)',
-																border: '2px solid ghostwhite',
-																color: 'ghostwhite',
-													}}>
-
-													<Link style={{ color: 'ghostwhite' }}to='/Fertigungsaufträge'>
-														{this.props.t('orders.buttonback')}
-													</Link>
-
-													</Button>
-													</td>
-													<td>
-														<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
-															background: 'rgb(250, 149, 129)',
-															border: '2px solid ghostwhite',
-															color: 'ghostwhite',
-															margin: '5px',
-															position: 'relative',
-															top: '2px',
-														}}> {this.props.t('orders.buttonreset')} </Button>
-													</td>
-													<td style={{ position: 'relative'}}>
-														<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
-																										background: 'rgb(250, 149, 129)',
-																											border: '2px solid ghostwhite',
-																											color: 'ghostwhite',
-													}}>
-
-													<Link style={{ color: 'ghostwhite' }}to='/Arbeitszeiten'>
-														{this.props.t('orders.buttonforward')}
-													</Link>
-
-													</Button>
-													</td>
-
-												</tr>
-    											</tbody>
-    										</table>
-  										</td>
-
-							</tr>
-
-						</tbody>
+											</Button>
+										</td>
+										<td>
+											<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
+												background: 'rgb(250, 149, 129)',
+												border: '2px solid ghostwhite',
+												color: 'ghostwhite',
+												margin: '5px',
+												position: 'relative',
+												top: '2px',
+											}}> {this.props.t('orders.buttonreset')} </Button>
+										</td>
+										<td style={{ position: 'relative'}}>
+											<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+														background: 'rgb(250, 149, 129)',
+														border: '2px solid ghostwhite',
+														color: 'ghostwhite',
+												}}>
+												<Link style={{ color: 'ghostwhite' }}to='/Arbeitszeiten'>
+													{this.props.t('orders.buttonforward')}
+												</Link>
+												</Button>
+											</td>
+											</tr>
+										</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
 						</div>
 						</table>
-
-
-
-
-
-
-
-						</div>
-
+					</div>
 						<Button
-                                     id='product1_button'
-                                        style={{ marginLeft: '20px' ,position: '', right: '35%',
-                                        background: 'rgb(250, 149, 129)',
-                                        border: '2px solid ghostwhite',
-                                        color: 'ghostwhite',
-                                        margin: '20px',
-                                        position: 'relative',
-                                        right: '-350px'
+							id='product1_button'
+								style={{ marginLeft: '20px' ,position: '', right: '35%',
+								background: 'rgb(250, 149, 129)',
+								border: '2px solid ghostwhite',
+								color: 'ghostwhite',
+								margin: '20px',
+								position: 'relative',
+								right: '-350px'
 
-                                    }}
-                                        onClick={this.anzeigenExpertModus}
+								}}
+								onClick={this.anzeigenExpertModus}
 
-                                        > Expert modus </Button>
-                                    {/* > {this.props.t('fertigungsauftraege.calcview')}</Button> */}
-                                     {/* ugur */}
-
-
+									> Expert modus </Button>
+							{/* > {this.props.t('fertigungsauftraege.calcview')}</Button> */}
+								{/* ugur */}
 						{ !this.state.erklärung && (
                         <div style={{ height: '200px'}}> </div>
 
                     )}
- <button style={{ color:'white', position:'fixed'}}> Kaufteil Nr	Lieferfrist	Abweichung	Diskontmenge	Lagerbestand	Bruttobedarf	zukünftige Eingänge	Lagerbestand</button>
-{ this.state.erklärung && (
-<React.Fragment> 
-<table  style={{ whiteSpace: 'nowrap', margin: '20px 0 0 -255px'}}>
-  <tr >
-	  <th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.kaufteilnr')}</th>
-	  <th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.lieferfrist')}</th>
-	  <th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.abweichung')}</th>
-	  <th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.diskontmenge')}</th>
-	  <th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.lagerbestand')}</th>
-	  <th style={{border: '2px solid white'}} colSpan="4">{this.props.t('orders.bruttobedarf')}</th>
-	  <th style={{border: '2px solid white'}} colSpan="9"> {this.props.t('orders.futurevalue')}</th>
-	  <th style={{border: '2px solid white'}} colSpan="4">{this.props.t('orders.stockvalue')}</th>
-  </tr>
-  <tr>
-    <td style={{ border: '2px solid white'}} rowspan="2">n</td>
-    <td style={{ border: '2px solid white'}} rowspan="2">n+1</td>
-    <td style={{ border: '2px solid white'}} rowspan="2">n+2</td>
-    <td style={{ border: '2px solid white'}} rowspan="2">n+3</td>
-    <td style={{ border: '2px solid white'}} colspan="3">n</td>
-    <td style={{ border: '2px solid white'}} colspan="2">n+1</td>
-    <td style={{ border: '2px solid white'}} colspan="2">n+2</td>
-    <td style={{ border: '2px solid white'}} colspan="2">n+3</td>
-    <td style={{ border: '2px solid white'}} rowspan="2">n+1</td>
-    <td style={{ border: '2px solid white'}} rowspan="2">n+2</td>
-    <td style={{ border: '2px solid white'}} rowspan="2">n+3</td>
-    <td style={{ border: '2px solid white'}} rowspan="2">n+4</td>
-  </tr>
-  <tr>
-	  <td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
-	  <td style={{border: '2px solid white'}} colSpan="2">{this.props.t('orders.menge')}</td>
-	  <td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
-	  <td style={{border: '2px solid white'}}>{this.props.t('orders.menge')}</td>
-	  <td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
-	  <td style={{border: '2px solid white'}}>{this.props.t('orders.menge')}</td>
-	  <td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
-	  <td style={{border: '2px solid white'}}>{this.props.t('orders.menge')}</td>
-  </tr>
-  {zahlen.map( number =>
-	  <tr>
-	  <td style={{ border: '2px solid white'}} > {number}</td>
-	  <td style={{ border: '2px solid white'}} > {normal_range[number]}</td>
-	  <td style={{ border: '2px solid white'}} > {deviation[number]}</td>
-	  <td style={{ border: '2px solid white'}} > {discount_quantity[number]}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_new_warehousestock[number])}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[1][number])}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[2][number])}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[3][number])}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[4][number])}</td>
-	  { console.log('wodka')}
-	  { console.log(reihenfolge_merge_periods)}
-	  <td style={{ border: '2px solid white'}} >
-	  	{ future_movement && future_movement[number] && future_movement[number][0] && future_movement[number][0]['ankunft']}</td>
-	  <td colspan='2' style={{ border: '2px solid white'}} >
-	  	{console.log('future__',future_movement)}
-	  	{ future_movement && future_movement[number] && future_movement[number][0] && future_movement[number][0]['menge']}</td>
-	  <td style={{ border: '2px solid white'}} >
-	  	{ future_movement && future_movement[number] && future_movement[number][1] && future_movement[number][1]['ankunft']}</td>
-	  <td style={{ border: '2px solid white'}} >
-	  	{ future_movement && future_movement[number] && future_movement[number][1] && future_movement[number][1]['menge']}</td>
-	  <td style={{ border: '2px solid white'}} >
-	  	{ future_movement && future_movement[number] && future_movement[number][2] && future_movement[number][2]['ankunft']}</td>
-	  <td style={{ border: '2px solid white'}} >
-	  	{ future_movement && future_movement[number] && future_movement[number][2] && future_movement[number][2]['menge']}</td>
-	  <td style={{ border: '2px solid white'}} >
-	  	{ future_movement && future_movement[number] && future_movement[number][3] && future_movement[number][3]['ankunft']}</td>
-	  <td style={{ border: '2px solid white'}} >
-	  	{ future_movement && future_movement[number] && future_movement[number][3] && future_movement[number][3]['menge']}</td>
-	  <td style={{ border: '2px solid white', ...colorstyle1}} > {Math.ceil(reihenfolge_warehousestock_after_movement[1][number])}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_warehousestock_after_movement[2][number])}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_warehousestock_after_movement[3][number])}</td>
-	  <td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_warehousestock_after_movement[4][number])}</td>
-	  </tr>
-
-	)}
-</table>
-</React.Fragment> 
-)}
-	</React.Fragment>
-    )}
+							<button style={{ color:'white', position:'fixed'}}> Kaufteil Nr	Lieferfrist	Abweichung	Diskontmenge	Lagerbestand	Bruttobedarf	zukünftige Eingänge	Lagerbestand</button>
+							{ this.state.erklärung && (
+							<React.Fragment> 
+							<table  style={{ whiteSpace: 'nowrap', margin: '20px 0 0 -255px'}}>
+								<tr >
+									<th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.kaufteilnr')}</th>
+									<th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.lieferfrist')}</th>
+									<th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.abweichung')}</th>
+									<th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.diskontmenge')}</th>
+									<th style={{border: '2px solid white'}} rowSpan="3">{this.props.t('orders.lagerbestand')}</th>
+									<th style={{border: '2px solid white'}} colSpan="4">{this.props.t('orders.bruttobedarf')}</th>
+									<th style={{border: '2px solid white'}} colSpan="9"> {this.props.t('orders.futurevalue')}</th>
+									<th style={{border: '2px solid white'}} colSpan="4">{this.props.t('orders.stockvalue')}</th>
+								</tr>
+								<tr>
+									<td style={{ border: '2px solid white'}} rowspan="2">n</td>
+									<td style={{ border: '2px solid white'}} rowspan="2">n+1</td>
+									<td style={{ border: '2px solid white'}} rowspan="2">n+2</td>
+									<td style={{ border: '2px solid white'}} rowspan="2">n+3</td>
+									<td style={{ border: '2px solid white'}} colspan="3">n</td>
+									<td style={{ border: '2px solid white'}} colspan="2">n+1</td>
+									<td style={{ border: '2px solid white'}} colspan="2">n+2</td>
+									<td style={{ border: '2px solid white'}} colspan="2">n+3</td>
+									<td style={{ border: '2px solid white'}} rowspan="2">n+1</td>
+									<td style={{ border: '2px solid white'}} rowspan="2">n+2</td>
+									<td style={{ border: '2px solid white'}} rowspan="2">n+3</td>
+									<td style={{ border: '2px solid white'}} rowspan="2">n+4</td>
+								</tr>
+								<tr>
+									<td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
+									<td style={{border: '2px solid white'}} colSpan="2">{this.props.t('orders.menge')}</td>
+									<td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
+									<td style={{border: '2px solid white'}}>{this.props.t('orders.menge')}</td>
+									<td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
+									<td style={{border: '2px solid white'}}>{this.props.t('orders.menge')}</td>
+									<td style={{border: '2px solid white'}}>{this.props.t('orders.ankunft')}</td>
+									<td style={{border: '2px solid white'}}>{this.props.t('orders.menge')}</td>
+								</tr>
+								{zahlen.map( number =>
+									<tr>
+									<td style={{ border: '2px solid white'}} > {number}</td>
+									<td style={{ border: '2px solid white'}} > {normal_range[number]}</td>
+									<td style={{ border: '2px solid white'}} > {deviation[number]}</td>
+									<td style={{ border: '2px solid white'}} > {discount_quantity[number]}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_new_warehousestock[number])}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[1][number])}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[2][number])}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[3][number])}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_merge_periods[4][number])}</td>
+									{ console.log('wodka')}
+									{ console.log(reihenfolge_merge_periods)}
+									<td style={{ border: '2px solid white'}} >
+										{ future_movement && future_movement[number] && future_movement[number][0] && future_movement[number][0]['ankunft']}</td>
+									<td colspan='2' style={{ border: '2px solid white'}} >
+										{console.log('future__',future_movement)}
+										{ future_movement && future_movement[number] && future_movement[number][0] && future_movement[number][0]['menge']}</td>
+									<td style={{ border: '2px solid white'}} >
+										{ future_movement && future_movement[number] && future_movement[number][1] && future_movement[number][1]['ankunft']}</td>
+									<td style={{ border: '2px solid white'}} >
+										{ future_movement && future_movement[number] && future_movement[number][1] && future_movement[number][1]['menge']}</td>
+									<td style={{ border: '2px solid white'}} >
+										{ future_movement && future_movement[number] && future_movement[number][2] && future_movement[number][2]['ankunft']}</td>
+									<td style={{ border: '2px solid white'}} >
+										{ future_movement && future_movement[number] && future_movement[number][2] && future_movement[number][2]['menge']}</td>
+									<td style={{ border: '2px solid white'}} >
+										{ future_movement && future_movement[number] && future_movement[number][3] && future_movement[number][3]['ankunft']}</td>
+									<td style={{ border: '2px solid white'}} >
+										{ future_movement && future_movement[number] && future_movement[number][3] && future_movement[number][3]['menge']}</td>
+									<td style={{ border: '2px solid white', ...colorstyle1}} > {Math.ceil(reihenfolge_warehousestock_after_movement[1][number])}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_warehousestock_after_movement[2][number])}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_warehousestock_after_movement[3][number])}</td>
+									<td style={{ border: '2px solid white'}} > {Math.ceil(reihenfolge_warehousestock_after_movement[4][number])}</td>
+	 						 </tr>
+							)}
+					</table>
+				</React.Fragment> 
+				)}
+			</React.Fragment>
+		)}
 }
 
 export default translate(Bestellungen);
