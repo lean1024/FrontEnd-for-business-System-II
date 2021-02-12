@@ -9,6 +9,295 @@ import { Button } from 'semantic-ui-react'
 import { isObject } from 'util';
 
 class Sales2 extends Component {
+    // @backend logic replaced under render() to highlight jsx / html section
+    
+    render() {
+        // localStorage.clear()
+        const {  sales1, sales2, allowWeiter } = this.state;
+        let {
+            LagerbestandE1,
+            LagerbestandE2,
+            LagerbestandE3,
+            LagerbestandP1,
+            LagerbestandP2,
+            LagerbestandP3,
+            aktuellerLagerbestandP1,
+            aktuellerLagerbestandP2,
+            aktuellerLagerbestandP3,
+            direkt_mengep1,
+            direkt_mengep2,
+            direkt_mengep3,
+            direkt_preisp1,
+            direkt_preisp2,
+            direkt_preisp3,
+            direkt_strafep1,
+            direkt_strafep2,
+            direkt_strafep3,
+        } = sales2;
+
+        // alert(aktuellerLagerbestandP1)
+
+        const sales1_ = localStorage.get('sales1');
+        const sales2_ = localStorage.get('sales2');
+
+        return (
+            // <div style={{ padding: '30px', margin: 'auto', width: '1400px' , position:'relative', right: '150px' ,border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}>
+            <div style={{ padding: '30px', margin: 'auto', width: '1400px' , position:'relative', right: '150px', border: '3px solid white'}}>
+                <table style={{ backgroundColor:'#c1c1bf',margin:'auto' }}>
+                <tbody style={{ border: '1px solid#f0f0f0' }}>
+                    <tr style={{ border: '1px solid#f0f0f0' }}>
+                        <th style={{ border: '1px solid#f0f0f0' }} rowspan="2"></th>
+                        <th style={{border: '1px solid#f0f0f0'}} rowSpan="2">{this.props.t('lagerbestand.stockvalueactually')}</th>
+                        <th style={{border: '1px solid#f0f0f0'}} colSpan="2">{this.props.t('lagerbestand.safetystock')}</th>
+                        <th style={{border: '1px solid#f0f0f0'}} colSpan="3">{this.props.t('lagerbestand.directsale')}</th>
+                    </tr>
+                    <tr style={{ border: '1px solid#f0f0f0' }}>
+                        <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.products')}</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.manufactures')}</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.amount')}</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.price')}</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.penalty')}</td>
+                    </tr>
+                    <tr style={{ border: '1px solid#f0f0f0' }}>
+                        <td style={{ border: '1px solid#f0f0f0' }} >p1</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="text"
+                                disabled='true'
+                                placeholder="upload xml"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="aktuellerLagerbestandP1" step="any"
+                                value={aktuellerLagerbestandP1} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="LagerbestandP1" step="50"
+                                value={LagerbestandP1} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE1" step="50"
+                                    value={LagerbestandE1} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_mengep1" step="50"
+                                value={direkt_mengep1} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_preisp1" step="50"
+                                value={direkt_preisp1} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_strafep1" step="50"
+                                value={direkt_strafep1} onChange={this.handleChange} />
+                        </td>
+                    </tr>
+                    <tr style={{ border: '1px solid#f0f0f0' }}>
+                        <td style={{ border: '1px solid#f0f0f0' }} >p2</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                disabled={true}
+                                type="number"
+                                placeholder="upload xml"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="aktuellerLagerbestandP2" step="50"
+                                value={aktuellerLagerbestandP2} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="LagerbestandP2" step="50"
+                                value={LagerbestandP2} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE2" step="50"
+                                value={LagerbestandE2} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_mengep2" step="50"
+                                value={direkt_mengep2} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_preisp2" step="50"
+                                value={direkt_preisp2} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_strafep2" step="50"
+                                value={direkt_strafep2} onChange={this.handleChange} />
+                        </td>
+                    </tr>
+                    <tr style={{ border: '1px solid#f0f0f0' }}>
+                        <td style={{ border: '1px solid#f0f0f0' }} >p3</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                disabled={true}
+                                type="number"
+                                autoComplete='off'
+                                placeholder="upload xml"
+                                min='0' maxLength="4"  name="aktuellerLagerbestandP3" step="50"
+                                value={aktuellerLagerbestandP3} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="LagerbestandP3" step="50"
+                                value={LagerbestandP3} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE3" step="50"
+                                value={LagerbestandE3} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_mengep3" step="50"
+                                value={direkt_mengep3} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_preisp3" step="50"
+                                value={direkt_preisp3} onChange={this.handleChange} />
+                        </td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >
+                            <input
+                                onFocus={this.handleFocus}
+                                onBlur={this.handleBlur}
+                                type="number"
+                                autoComplete='off'
+                                min='0' maxLength="4"  name="direkt_strafep3" step="50"
+                                value={direkt_strafep3} onChange={this.handleChange} />
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            <div style={{
+                'background': 'rgb(193, 193, 191)',
+                'padding': '25px',
+                borderRadius: '5px',
+                border: '1px solid white',
+                marginTop: '30px'}}
+            >
+                <label>
+                    {this.props.t('lagerbestand.uploadfile')}
+                <input
+                    onFocus={this.handleFocus}
+                    onBlur={this.handleBlur}
+                    onChange={this.setParams}
+                    style={{padding: '5px'}}
+                    type="file"
+                    ref={input => { this.App = input; }} />
+                </label>
+                <br />
+                <button style={{
+                    background: 'rgb(250, 149, 129)',
+                    border: '2px solid ghostwhite',
+                    color: 'black ',
+                    opacity: 0.67,
+                }}
+                    onFocus={this.handleFocus}
+                    onBlur={this.handleBlur}
+                    id='bestätigenButton'
+                    onClick={this.dispo_function_twice}
+                    type="submit">
+                    {this.props.t('lagerbestand.confirmbutton')}
+                </button>
+                {  this.state.input && (
+                    <a style={{
+                        'padding': '2px 10px 2px 10px',
+                        'border': '2px solid white',
+                        'margin': '0 0 0 15px',
+                    }}href={this.state.input} download="input.xml">download</a>
+                )}
+            </div>
+            <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+                background: 'rgb(250, 149, 129)',
+                border: '2px solid ghostwhite',
+                color: 'ghostwhite',
+                position: 'relative',
+                top: '12px'
+                }}>
+
+                <Link style={{ color: 'ghostwhite' }}to='/Sales1' >
+                    {this.props.t('lagerbestand.backbutton')}
+                </Link>
+
+            </Button>
+
+            { allowWeiter && (
+                <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+                    background: 'rgb(250, 149, 129)',
+                    border: '2px solid ghostwhite',
+                    color: 'ghostwhite',
+                    position: 'relative',
+                    top: '12px',
+                    marginLeft: '10px',
+                    }}>
+
+                    <Link style={{ color: 'ghostwhite' }}to='/Fertigungsaufträge' >
+                        {this.props.t('lagerbestand.nextbutton')}
+                    </Link>
+
+                </Button>
+
+            )}
+
+            </div>
+        )
+    }
+
+
     state = {
         allowBestätigen: false,
         allowWeiter: false,
@@ -99,25 +388,9 @@ class Sales2 extends Component {
         const sales1 = localStorage.get('sales1');
         const sales2 = localStorage.get('sales2');
 
-        // if (!sales2) {
-        //     alert('settting sales2')
-        //     let sales2_xml_preObject= {
-        //         direkt_mengep1: 0,
-        //         direkt_mengep2: 0,
-        //         direkt_mengep3: 0,
-        //         direkt_preisp1: 0.0,
-        //         direkt_preisp2: 0.0,
-        //         direkt_preisp3: 0.0,
-        //         direkt_strafep1:0.0,
-        //         direkt_strafep2:0.0,
-        //         direkt_strafep3:0.0,
-        //     }
-        //     localStorage.set('sales2',sales2_xml_preObject)
-        // }
+ 
 
-        console.log('hallo')
-        console.log(sales1)
-
+ 
         if ( sales1 !== null ) {
             // Übernehme Vertriebswunsch als Lagerbestand für E, als erste Innitierung.
             let { n1_p1 , n1_p2, n1_p3 } = sales1;
@@ -3017,373 +3290,9 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 
     // ##################### Bestellungen Ende
 
-    render() {
-        // localStorage.clear()
-        const {  sales1, sales2, allowWeiter } = this.state;
-        let {
-            LagerbestandE1,
-            LagerbestandE2,
-            LagerbestandE3,
-            LagerbestandP1,
-            LagerbestandP2,
-            LagerbestandP3,
-            aktuellerLagerbestandP1,
-            aktuellerLagerbestandP2,
-            aktuellerLagerbestandP3,
-            direkt_mengep1,
-            direkt_mengep2,
-            direkt_mengep3,
-            direkt_preisp1,
-            direkt_preisp2,
-            direkt_preisp3,
-            direkt_strafep1,
-            direkt_strafep2,
-            direkt_strafep3,
-        } = sales2;
-
-        // alert(aktuellerLagerbestandP1)
-
-        const sales1_ = localStorage.get('sales1');
-        const sales2_ = localStorage.get('sales2');
-
-        return (
-<div style={{ padding: '30px', margin: 'auto', width: '1400px' , position:'relative', right: '150px' ,border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}>
-
-<table style={{ backgroundColor:'#c1c1bf',margin:'auto' }}>
-<tbody style={{ border: '1px solid#f0f0f0' }}>
-
-  <tr style={{ border: '1px solid#f0f0f0' }}>
-    <th style={{ border: '1px solid#f0f0f0' }} rowspan="2"></th>
-      <th style={{border: '1px solid#f0f0f0'}} rowSpan="2">{this.props.t('lagerbestand.stockvalueactually')}</th>
-      <th style={{border: '1px solid#f0f0f0'}} colSpan="2">{this.props.t('lagerbestand.safetystock')}</th>
-      <th style={{border: '1px solid#f0f0f0'}} colSpan="3">{this.props.t('lagerbestand.directsale')}</th>
-  </tr>
-  <tr style={{ border: '1px solid#f0f0f0' }}>
-      <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.products')}</td>
-      <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.manufactures')}</td>
-      <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.amount')}</td>
-      <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.price')}</td>
-      <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.penalty')}</td>
-  </tr>
-  <tr style={{ border: '1px solid#f0f0f0' }}>
-    <td style={{ border: '1px solid#f0f0f0' }} >p1</td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="text"
-                            disabled='true'
-                            placeholder="upload xml"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="aktuellerLagerbestandP1" step="any"
-                            value={aktuellerLagerbestandP1} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="LagerbestandP1" step="50"
-                            value={LagerbestandP1} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE1" step="50"
-                                value={LagerbestandE1} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_mengep1" step="50"
-                            value={direkt_mengep1} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_preisp1" step="50"
-                            value={direkt_preisp1} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_strafep1" step="50"
-                            value={direkt_strafep1} onChange={this.handleChange} />
-    </td>
-  </tr>
-  <tr style={{ border: '1px solid#f0f0f0' }}>
-    <td style={{ border: '1px solid#f0f0f0' }} >p2</td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            disabled={true}
-                            type="number"
-                            placeholder="upload xml"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="aktuellerLagerbestandP2" step="50"
-                            value={aktuellerLagerbestandP2} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="LagerbestandP2" step="50"
-                            value={LagerbestandP2} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE2" step="50"
-                                value={LagerbestandE2} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-                <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_mengep2" step="50"
-                            value={direkt_mengep2} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-                <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_preisp2" step="50"
-                            value={direkt_preisp2} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-                <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_strafep2" step="50"
-                            value={direkt_strafep2} onChange={this.handleChange} />
-    </td>
-  </tr>
-  <tr style={{ border: '1px solid#f0f0f0' }}>
-    <td style={{ border: '1px solid#f0f0f0' }} >p3</td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            disabled={true}
-                            type="number"
-                            autoComplete='off'
-                            placeholder="upload xml"
-                            min='0' maxLength="4"  name="aktuellerLagerbestandP3" step="50"
-                            value={aktuellerLagerbestandP3} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="LagerbestandP3" step="50"
-                            value={LagerbestandP3} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-        <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE3" step="50"
-                                value={LagerbestandE3} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-            <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_mengep3" step="50"
-                            value={direkt_mengep3} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-            <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_preisp3" step="50"
-                            value={direkt_preisp3} onChange={this.handleChange} />
-    </td>
-    <td style={{ border: '1px solid#f0f0f0' }} >
-            <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="direkt_strafep3" step="50"
-                            value={direkt_strafep3} onChange={this.handleChange} />
-    </td>
-  </tr>
-</tbody>
-</table>
-
-                {/* <table class="tg"  style={{backgroundColor:'#c1c1bf',margin:'auto' }} >
-                    <tbody style={{ border: '1px solid#f0f0f0' }}>
-                <tr >
-                    <th style={{padding:'20px'}} class="tg-cly1"></th>
-                    <th style={{padding:'20px'}} class="tg-cly1">
-                        {this.props.t('lagerbestand.lagerbestandE')}
-                    </th>
-                    <th style={{padding:'20px 25px 20px 20px'}} class="tg-0lax">
-                        {this.props.t('lagerbestand.lagerbestandP')}
-                    </th>
-                </tr>
-                <tr>
-                    <td style={{padding:'20px'}} class="tg-cly1">P1</td>
-                    <td style={{padding:'20px'}} class="tg-cly1">
-                        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number"
-                            autoComplete='off'
-                            min='0' maxLength="4"  name="LagerbestandP1" step="50"
-                            value={LagerbestandP1} onChange={this.handleChange} />
-                    </td>
-                    <td style={{padding:'20px 25px 20px 20px'}} class="tg-0lax">
-                        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE1" step="50"
-                            value={LagerbestandE1} onChange={this.handleChange} />
-                    </td>
-                </tr>
-                <tr>
-                    <td style={{padding:'20px'}} class="tg-cly1">P2</td>
-                    <td style={{padding:'20px 25px 20px 20px'}} class="tg-cly1">
-                        <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandP2" step="50"
-                                value={LagerbestandP2} onChange={this.handleChange} />
-                    </td>
-                    <td style={{padding:'20px'}} class="tg-0lax">
-                        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE2" step="50"
-                            value={LagerbestandE2} onChange={this.handleChange} />
-                    </td>
-                </tr>
-                <tr>
-                    <td style={{padding:'20px'}} class="tg-0lax">P3</td>
-                    <td style={{padding:'20px'}} class="tg-0lax">
-                        <input  onFocus={this.handleFocus} onBlur={this.handleBlur}  type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandP3" step="50"
-                                value={LagerbestandP3} onChange={this.handleChange} />
-                    </td>
-                    <td style={{padding:'20px 25px 20px 20px'}} class="tg-0lax">
-                        <input
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
-                            type="number" autoComplete='off'  min='0' maxLength="4"  name="LagerbestandE3" step="50"
-                            value={LagerbestandE3} onChange={this.handleChange} />
-                    </td>
-                </tr>
-                </tbody>
-                </table> */}
-
-<div style={{
-    'background': 'rgb(193, 193, 191)',
-    'padding': '25px',
-    borderRadius: '5px',
-    border: '1px solid white',
-    marginTop: '30px'}}>
-            <label>
-            {this.props.t('lagerbestand.uploadfile')}
-
-            <input
-                onFocus={this.handleFocus}
-                onBlur={this.handleBlur}
-                onChange={this.setParams}
-                style={{padding: '5px'}}
-                type="file"
-                ref={input => { this.App = input; }} />
-            </label>
-            <br />
-            <button style={{
-                background: 'rgb(250, 149, 129)',
-                border: '2px solid ghostwhite',
-                color: 'black ',
-                opacity: 0.67,
-            }}
-                onFocus={this.handleFocus}
-                     onBlur={this.handleBlur}
-                     id='bestätigenButton'
-                     onClick={this.dispo_function_twice}
-                     type="submit">
-                {this.props.t('lagerbestand.confirmbutton')}
-            </button>
-            { console.log('meh' , this.state.input)}
-            {  this.state.input && (
-                <a style={{
-                    'padding': '2px 10px 2px 10px',
-                    'border': '2px solid white',
-                    'margin': '0 0 0 15px',
-                }}href={this.state.input} download="input.xml">download</a>
-            )}
-</div>
-
-
-<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
-    background: 'rgb(250, 149, 129)',
-      border: '2px solid ghostwhite',
-      color: 'ghostwhite',
-      position: 'relative',
-      top: '12px'
-  }}>
-
-    <Link style={{ color: 'ghostwhite' }}to='/Sales1' >
-        {this.props.t('lagerbestand.backbutton')}
-    </Link>
-
-</Button>
-
-{/* { sales2_ && <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}
-onClick={this.handleReset}
-style={{  margin: '5px 0 0 0 ' ,
-    background: 'rgb(250, 149, 129)',
-      border: '2px solid ghostwhite',
-      color: 'ghostwhite',
-      position: 'relative',
-      top: '12px',
-      marginLeft: '10px',
-
-  }}>
-
-      reset
-
-</Button> } */}
-
-{ allowWeiter && (
-    <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
-        background: 'rgb(250, 149, 129)',
-        border: '2px solid ghostwhite',
-        color: 'ghostwhite',
-        position: 'relative',
-        top: '12px',
-        marginLeft: '10px',
-    }}>
-
-        <Link style={{ color: 'ghostwhite' }}to='/Fertigungsaufträge' >
-            {this.props.t('lagerbestand.nextbutton')}
-        </Link>
-
-    </Button>
-
-)}
-
-            </div>
-        )
-    }
 }
+
+
 
 
 export default translate(Sales2);
