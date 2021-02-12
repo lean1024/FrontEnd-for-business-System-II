@@ -66,11 +66,7 @@ class Fertigungsaufträge extends Component {
         let product_name = evt.target.name.slice(2,evt.target.name.length)
         let product_entry = evt.target.name.slice(7,evt.target.name.length)
 
-        // alert(product_name)  menge1
-        // alert(product_entry)  1
-
         // ################################################################# wenn von p1 weniger produziert werden, dann von allen abhängigen auch nicht
-        console.log('himmel')
         if (product_number == 1) {
             p1_verrechnung[product_entry].map( entry => {
                 if (fertigungsaufträge1[1][entry]) {
@@ -85,7 +81,6 @@ class Fertigungsaufträge extends Component {
             })
         }
 
-        console.log('himmel')
         if (product_number == 2) {
             p2_verrechnung[product_entry].map( entry => {
                 if (fertigungsaufträge1[2][entry]) {
@@ -100,7 +95,6 @@ class Fertigungsaufträge extends Component {
             })
         }
 
-        console.log('himmel')
         if (product_number == 3) {
             p3_verrechnung[product_entry].map( entry => {
                 if (fertigungsaufträge1[3][entry]) {
@@ -1677,7 +1671,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                     console.log('differenze', differenze)
                 }
                 if( better_engpass[1][number]){ //
-                    console.log('himmel')
                     if (product_number == 1 && treffer)  {
 
 
@@ -1708,7 +1701,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                 let differenze = fertigungsaufträge1[2][product_entry][`menge${product_entry}`] - better_engpass[2][number]
                 if( a-b < 0){ //
 
-                    console.log('himmel')
                     if (product_number == 2 && better_engpass[2][number]) {
                         p2_verrechnung[product_entry].map( entry => {
                             if (fertigungsaufträge1[2][entry]) {
@@ -1741,10 +1733,8 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                     let product_entry = number
 
                     // ################################################################# wenn von p1 weniger produziert werden, dann von allen abhängigen auch nicht
-                    console.log('himmel')
 
 
-                    console.log('himmel')
                     let differenze = fertigungsaufträge1[3][product_entry][`menge${product_entry}`] - better_engpass[3][number]
                     if (product_number == 3 && better_engpass[3][number]) {
                         p3_verrechnung[product_entry].map( entry => {
@@ -1912,7 +1902,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                 //alert(menge)
 
                 // ################################################################# wenn von p1 weniger produziert werden, dann von allen abhängigen auch nicht
-                console.log('himmel')
                 if (product_number == 1) {
                     p1_verrechnung[product_entry].map( entry => {
                         if (fertigungsaufträge1[1][entry]) {
@@ -1927,7 +1916,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                     })
                 }
 
-                console.log('himmel')
                 if (product_number == 2) {
                     p2_verrechnung[product_entry].map( entry => {
                         if (fertigungsaufträge1[2][entry]) {
@@ -1942,7 +1930,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                     })
                 }
 
-                console.log('himmel')
                 if (product_number == 3) {
                     p3_verrechnung[product_entry].map( entry => {
                         if (fertigungsaufträge1[3][entry]) {
@@ -2103,50 +2090,15 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 
         let { fertigungsaufträge, epsProdukt1Angewand, epsProdukt2Angewand, epsProdukt3Angewand } = this.state;
         let dispo_dict = localStorage.get('super_dispo_dict')
-        // console.log('a_')
-        // console.log(fertigungsaufträge)
-        // console.log('b_')
-        // console.log(dispo_dict)
         let fertigungsaufträge1 = localStorage.get('fertigungsaufträge1')
 
 
         console.log('c_')
         console.log(fertigungsaufträge1)
 
-        // console.log('render state')
-        // console.log( this.state )
-        // console.log(fertigungsaufträge)
-
         const Reihenfolge1 = [ 1, 26 , 51 , 16 , 17 , 50 , 4 , 10 , 49, 7 , 13 , 18 ]
         const Reihenfolge2 = [ 2, 26 , 56 , 16 , 17 , 55 , 5 , 11 , 54, 8 , 14, 19 ]
         const Reihenfolge3 = [ 3, 26, 31 , 16 , 17 , 30 , 6 , 12 , 29 , 9 , 15 , 20 ]
-
-    if ( fertigungsaufträge ) {
-            // console.log('#############################')
-            // Object.keys(fertigungsaufträge).map(number => {
-            //     console.log(number)
-            //     console.log(fertigungsaufträge[number])
-            //     let a = Object.keys(fertigungsaufträge[number]);
-            //     Object.keys(fertigungsaufträge[number]).map(entry => console.log(entry))
-            //     console.log(a)
-            // })
-
-        // let numberX;
-        // console.log('hello2000')
-        // for ( numberX of Reihenfolge1 ) {
-        //     sequenz1.push(fertigungsaufträge[numberX])
-        // }
-        // for ( numberX of Reihenfolge2 ) {
-        //     sequenz2.push(fertigungsaufträge[numberX])
-        // }
-        // for ( numberX of Reihenfolge3 ) {
-        //     sequenz3.push(fertigungsaufträge[numberX])
-        // }
-        // // reihenfolge für Produkte 1 , 2 , 3 erfolgreich extrahiert
-        // console.log(sequenz1)
-
-
-    }
 
     const { displayProdukt1 ,    displayProdukt2 ,    displayProdukt3, changeDetected} = this.state;
     let engpasssteuerung_dispo_dict = localStorage.get('sascha_engpasssteuerung')
@@ -2290,186 +2242,121 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 
 
         return (
-                    <React.Fragment>
-						<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}>
-
-
-                        <table style={{backgroundColor:'#c1c1bf',margin:'auto' }}>
-                        <div style={{ border: '3px solid#f0f0f0'}}>
-							<tbody>
-
-                            <tr style={{visibility: 'hidden'}}> hello</tr>
-                            <tr style={{visibility: 'hidden'}}> hello</tr>
-                                <tr style={{ textAlign: 'center' , padding: '25px', position: 'relative', margin: '20px'}}>
-                                    {this.props.t('fertigungsauftraege.productnumber1')}
-                                     <Button
-                                     id='product1_button'
-                                        style={{ marginLeft: '20px' ,position: '', right: '35%',
-                                        background: 'rgb(250, 149, 129)',
-                                        border: '2px solid ghostwhite',
-                                        color: 'ghostwhite',
-                                        marginLeft: '20px',
-
-                                    }}
-                                        onClick={this.anzeigenBerrechnungProdukt1}
-
-                                    > {this.props.t('fertigungsauftraege.calcview')}</Button>
-
-
-
-
-
-
-
-
-
-
-
-                                    <Button
-                                     id=''
-                                        style={{ marginLeft: '20px' ,position: '', right: '35%',
-                                        background: 'rgb(250, 149, 129)',
-                                        border: '2px solid ghostwhite',
-                                        color: 'ghostwhite',
-                                        marginLeft: '20px',
-                                        }}
-                                        onClick={this.epsProdukt1}
-                                    > {this.props.t('fertigungsauftraege.useeps')}</Button>
-                                                                                            <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset1} style={{
-                                                        															background: 'rgb(250, 149, 129)',
-                                                                                                                    border: '2px solid ghostwhite',
-                                                                                                                    color: 'ghostwhite',
-                                                                                                                    margin: '20px',
-                                                        right: '56px'}}> {this.props.t('fertigungsauftraege.resetbutton')}</Button>
-                                </tr>
-							<tr>
-
-								<td style={{padding:'25px'}}>
-									<table style={{margin:'auto'}}>
-										<tbody><tr>
-                                             <td> </td>
-                                             <td>{this.props.t('fertigungsauftraege.article')}</td>
-                                             { displayProdukt1 && <React.Fragment>
-                                                 <th className="tg-0pky"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.salesrequest')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.transferqueue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.planningstockvalue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.availablestockvalue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.queue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.workingorder')}</th>
-                                            <th class="tg-0lax" style={{ padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.nichteps')}</th>
-
-
-                                            </React.Fragment>
-                                             }
- 											 											<td style={{ padding: '0 0 0 15px'}}>
-                                             <div  style={{ padding: '0 0 0 15px'}}>{this.props.t('fertigungsauftraege.amount')} </div>
-                                             </td>
-                                             {/* <td style={{ whiteSpace: 'none', marginLeft: '15px'}} > {this.props.t('fertigungsauftraege.maxamount')}</td> */}
-
-										</tr>
-                                    { this.state.fertigungsaufträge &&   Reihenfolge1.map( (number) =>
+            <React.Fragment>
+                {/* <div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}> */}
+                <div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , }}>
+                <table style={{backgroundColor:'#c1c1bf',margin:'auto' }}>
+                <div style={{ }}>
+                    <tbody>
+                    <tr style={{visibility: 'hidden'}}> hello</tr>
+                    <tr style={{visibility: 'hidden'}}> hello</tr>
+                        <tr style={{ textAlign: 'center' , padding: '25px', position: 'relative', margin: '20px'}}>
+                            {this.props.t('fertigungsauftraege.productnumber1')}
+                            <Button
+                                id='product1_button'
+                                style={{ marginLeft: '20px' ,position: '', right: '35%',
+                                    background: 'rgb(250, 149, 129)',
+                                    border: '2px solid ghostwhite',
+                                    color: 'ghostwhite',
+                                    marginLeft: '20px',
+                                }}
+                                onClick={this.anzeigenBerrechnungProdukt1}
+                            > {this.props.t('fertigungsauftraege.calcview')}</Button>
+                            <Button
+                                id=''
+                                style={{ marginLeft: '20px' ,position: '', right: '35%',
+                                    background: 'rgb(250, 149, 129)',
+                                    border: '2px solid ghostwhite',
+                                    color: 'ghostwhite',
+                                    marginLeft: '20px',
+                                }}
+                                onClick={this.epsProdukt1}
+                            > 
+                                {this.props.t('fertigungsauftraege.useeps')}
+                            </Button>
+                            <Button 
+                                onFocus={ this.handleFocus} 
+                                onBlur={this.handleBlur}  
+                                onClick={this.handleReset1} 
+                                style={{
+                                    background: 'rgb(250, 149, 129)',
+                                    border: '2px solid ghostwhite',
+                                    color: 'ghostwhite',
+                                    margin: '20px',
+                                    right: '56px'}}> 
+                                {this.props.t('fertigungsauftraege.resetbutton')}
+                            </Button>
+                        </tr>
+                        <tr>
+                            <td style={{padding:'25px'}}>
+                                <table style={{margin:'auto'}}>
+                                    <tbody>
                                         <tr>
-                                                <td> {bezeichnerErz[number]}</td>
-                                            <td>
-                                                 <input style={{ margin: '0 5px 0 0 '}} onChange={this.handleChange} tabindex='-1'
-                                                 key={'a'+ number } type="number" autoComplete='off' size="4" name={number} value={number} maxLength="5" type="text" />
-                                            </td>
-                                            {/* <td>
-                                                <i>
-
-
-
-
-                                                </i>
-                                            </td> */}
+                                            <td> </td>
+                                            <td>{this.props.t('fertigungsauftraege.article')}</td>
                                             { displayProdukt1 && <React.Fragment>
-                                            <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> { dispo_dict[1][number].sales_order}</td>
-                                            <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> +{ dispo_dict[1][number].tf_waiting_item}</td>
-                                            <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> +{ dispo_dict[1][number].planned_stock}</td>
-                                            <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[1][number].warehousestock }</td>
-                                            <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[1][number].waiting_items} </td>
-                                            <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[1][number].producing_items} </td>
-                                            {/* <th class="tg-0lax" style={{ padding: '0 0 0 20px'}}>nicht produzierbar (E.p.s)</th> */}
-                                                <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ better_engpass[1][number]} </td>
-
-                                            </React.Fragment>
+                                                <th className="tg-0pky"
+                                                    style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.salesrequest')}</th>
+                                                <th className="tg-0lax"
+                                                    style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.transferqueue')}</th>
+                                                <th className="tg-0lax"
+                                                    style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.planningstockvalue')}</th>
+                                                <th className="tg-0lax"
+                                                    style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.availablestockvalue')}</th>
+                                                <th className="tg-0lax"
+                                                    style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.queue')}</th>
+                                                <th className="tg-0lax"
+                                                    style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.workingorder')}</th>
+                                                <th class="tg-0lax" style={{ padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.nichteps')}</th>
+                                                </React.Fragment>
                                             }
-                                            <td style={{ padding: '0 0 0 26px'}}>
-                                                {/* <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                                 key={'b'+ number } type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`]} maxLength="5" type="text" /> */}
-                                            { console.log(`E${number}`)}
-                                            {console.log(fertigungsaufträge1[1][number][`menge${number}`], '- ', - ffx_engpass[1][number])}
-                                            { better_engpass[1][number] && !epsProdukt1Angewand && (
-                                                 <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                                 key={'b'+ number } style={{ outline: '3px solid red' }} type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`] } maxLength="5" type="number" />
-
-                                            )}
-                                            {  better_engpass[1][number] && epsProdukt1Angewand && (
-
-                                                <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                                key={'b'+ number } type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`] } maxLength="5" type="number" />
-
-                                            )}
-                                            {  !better_engpass[1][number]  && (
-
-                                                <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                                key={'b'+ number } type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`] } maxLength="5" type="number" />
-
-                                            )}
-                                            {/* { epsProdukt1Angewand && (
-
-                                            <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                            key={'b'+ number } type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`] } maxLength="5" type="number" />
-
-                                            )} */}
+                                            <td style={{ padding: '0 0 0 15px'}}>
+                                                <div  style={{ padding: '0 0 0 15px'}}>{this.props.t('fertigungsauftraege.amount')} </div>
                                             </td>
-                                            {/* <td style={{ marginLeft: '15px'}}>
-                                                {ffx_engpass[1][number]}
-                                            </td> */}
-
-                                                <div>
-                                                {/* <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style> */}
-{/* <table class="tg">
-
-  <tr>
-    <td class="tg-0lax" style={{ alignText: 'center' }}>{dispo_dict[number].sales_order} </td>
-    <td class="tg-0lax" style={{ alignText: 'center' }}>{ dispo_dict[number].tf_waiting_item}</td>
-    <td class="tg-0lax" style={{ alignText: 'center' }}>{ dispo_dict[number].planned_stock}</td>
-    <td class="tg-0lax" style={{ alignText: 'center' }}>{ dispo_dict[number].warehousestock }</td>
-    <td class="tg-0lax" style={{ alignText: 'center' }}>{ dispo_dict[number].waiting_items} </td>
-    <td class="tg-0lax" style={{ alignText: 'center' }}>{dispo_dict[number].producing_items}</td>
-  </tr>
-</table> */}
-                                                </div>
-
                                         </tr>
-                                    )}
-
+                                        { this.state.fertigungsaufträge &&   Reihenfolge1.map( (number) =>
+                                            <tr>
+                                                    <td> {bezeichnerErz[number]}</td>
+                                                    <td>
+                                                        <input style={{ margin: '0 5px 0 0 '}} onChange={this.handleChange} tabindex='-1'
+                                                        key={'a'+ number } type="number" autoComplete='off' size="4" name={number} value={number} maxLength="5" type="text" />
+                                                    </td>
+                                                    { displayProdukt1 && <React.Fragment>
+                                                    <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> { dispo_dict[1][number].sales_order}</td>
+                                                    <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> +{ dispo_dict[1][number].tf_waiting_item}</td>
+                                                    <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> +{ dispo_dict[1][number].planned_stock}</td>
+                                                    <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[1][number].warehousestock }</td>
+                                                    <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[1][number].waiting_items} </td>
+                                                    <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[1][number].producing_items} </td>
+                                                    <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ better_engpass[1][number]} </td>
+                                                    </React.Fragment>
+                                                }
+                                                <td style={{ padding: '0 0 0 26px'}}>
+                                                    {/* { console.log(`E${number}`)}
+                                                    {console.log(fertigungsaufträge1[1][number][`menge${number}`], '- ', - ffx_engpass[1][number])} */}
+                                                    { better_engpass[1][number] && !epsProdukt1Angewand && (
+                                                        <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
+                                                        key={'b'+ number } style={{ outline: '3px solid red' }} type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`] } maxLength="5" type="number" />
+                                                    )}
+                                                    {  better_engpass[1][number] && epsProdukt1Angewand && (
+                                                        <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
+                                                        key={'b'+ number } type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`] } maxLength="5" type="number" />
+                                                    )}
+                                                    {  !better_engpass[1][number]  && (
+                                                        <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
+                                                        key={'b'+ number } type="number" autoComplete='off' size="4" name={`1_menge${number}`} value={fertigungsaufträge1[1][number][`menge${number}`] } maxLength="5" type="number" />
+                                                    )}
+                                                </td>
+                                                    <div>
+                                                </div>
+                                            </tr>
+                                        )}
 									</tbody></table>
 								</td>
-
-
-
-
-
-
 							</tr>
                             <tr style={{visibility: 'hidden'}}> hello</tr>
                             <tr style={{visibility: 'hidden'}}> hello</tr>
-                                <tr style={{ textAlign: 'center' , padding: '25px'}}> {this.props.t('fertigungsauftraege.productnumber2')}
-
+                            <tr style={{ textAlign: 'center' , padding: '25px'}}> {this.props.t('fertigungsauftraege.productnumber2')}
                                 <Button
                                 id='product2_button'
                                         style={{ marginLeft: '20px' ,position: '', right: '35%',
@@ -2482,14 +2369,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 
                                         onClick={this.anzeigenBerrechnungProdukt2}
                                     > {this.props.t('fertigungsauftraege.calcview')}</Button>
-
-
-
-
-
-
-
-
                                     <Button
                                      id=''
                                         style={{ marginLeft: '20px' ,position: '', right: '35%',
@@ -2500,16 +2379,16 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                         }}
                                         onClick={this.epsProdukt2}
                                     > {this.props.t('fertigungsauftraege.useeps')}</Button>
-                                                                                                                                <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset2} style={{
-                                                        															background: 'rgb(250, 149, 129)',
-                                                                                                                    border: '2px solid ghostwhite',
-                                                                                                                    color: 'ghostwhite',
-                                                                                                                    margin: '20px',
-                                                        right: '56px'}}> {this.props.t('fertigungsauftraege.resetbutton')}</Button>
-                                </tr>
-                            <tr style={{visibility: 'hidden'}}>hello </tr>
-                            <tr  style={{padding:'25px'}}>
-                                <table style={{margin:'auto'}}>
+                                        <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset2} style={{
+                                            background: 'rgb(250, 149, 129)',
+                                            border: '2px solid ghostwhite',
+                                            color: 'ghostwhite',
+                                            margin: '20px',
+                                            right: '56px'}}> {this.props.t('fertigungsauftraege.resetbutton')}</Button>
+                                        </tr>
+                                    <tr style={{visibility: 'hidden'}}>hello </tr>
+                                    <tr  style={{padding:'25px'}}>
+                                        <table style={{margin:'auto'}}>
                                             <tbody><tr>
                                                 <td></td>
                                                 <td>{this.props.t('fertigungsauftraege.article')}</td>
@@ -2528,32 +2407,19 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                                         style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.workingorder')}</th>
                                                 <th class="tg-0lax" style={{ padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.nichteps')}</th>
                                                 {/* <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ better_engpass[1][number]} </td> */}
-
-
-
                                                 </React.Fragment>
                                                 }
-                                                											<td style={{ padding: '0 0 0 15px'}}>
+                                                <td style={{ padding: '0 0 0 15px'}}>
                                              <div  style={{ padding: '0 0 0 15px'}}>{this.props.t('fertigungsauftraege.amount')} </div>
                                              </td>
-                                             {/* <td style={{ whiteSpace: 'none', marginLeft: '15px'}} > {this.props.t('fertigungsauftraege.maxamount')} </td> */}
-
-
                                             </tr>
                                         { this.state.fertigungsaufträge &&   Reihenfolge2.map( (number) =>
                                             <tr>
                                                 <td> {bezeichnerErz[number]}</td>
-
                                                 <td>
                                                     <input style={{ margin: '0 5px 0 0 '}} onChange={this.handleChange} tabindex='-1'
                                                     key={'a'+ number } type="number" autoComplete='off' size="4" name={number} value={number} maxLength="5" type="text" />
                                                 </td>
-
-                                                {/* <td>
-                                                    <i>
-
-                                                    </i>
-                                                </td> */}
                                                 { displayProdukt2 && <React.Fragment>
                                                 <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> { dispo_dict[2][number].sales_order}</td>
                                                 <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> +{ dispo_dict[2][number].tf_waiting_item}</td>
@@ -2566,138 +2432,91 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 
                                                 </React.Fragment> }
                                                 <td style={{ padding: '0 0 0 26px'}}>
-
-                                                    {/* <div>
-                                                    <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                                    key={'b'+ number } type="number" autoComplete='off' size="4" name={`2_menge${number}`} value={fertigungsaufträge1[2][number][`menge${number}`] } maxLength="5" type="number" />
-                                                    </div> */}
                                             { better_engpass[2][number] && !epsProdukt2Angewand && (
                                                  <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
                                                  key={'b'+ number } style={{ outline: '3px solid red' }} type="number" autoComplete='off' size="4" name={`2_menge${number}`} value={fertigungsaufträge1[2][number][`menge${number}`] } maxLength="5" type="number" />
-
                                             )}
                                             { better_engpass[2][number] && epsProdukt2Angewand && (
-
                                                 <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
                                                 key={'b'+ number } type="number" autoComplete='off' size="4" name={`2_menge${number}`} value={fertigungsaufträge1[2][number][`menge${number}`] } maxLength="5" type="number" />
-
                                             )}
                                             { !better_engpass[2][number]  && (
-
                                             <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
                                             key={'b'+ number } type="number" autoComplete='off' size="4" name={`2_menge${number}`} value={fertigungsaufträge1[2][number][`menge${number}`] } maxLength="5" type="number" />
-
                                             )}
-
-
-                                                                                         </td>
-                                            {/* <td style={{ marginLeft: '15px'}}>
-                                                {ffx_engpass[2][number]}
-                                            </td> */}
+                                            </td>
+                                         
                                             </tr>
                                         )}
-
-                                        </tbody></table>
+                                </tbody></table>
                             </tr>
 
-
-
                             <tr style={{visibility: 'hidden'}}> hello</tr>
                             <tr style={{visibility: 'hidden'}}> hello</tr>
-                                <tr style={{ textAlign: 'center' , padding: '25px'}}> {this.props.t('fertigungsauftraege.productnumber3')}
-
+                            <tr style={{ textAlign: 'center' , padding: '25px'}}> {this.props.t('fertigungsauftraege.productnumber3')}
                                 <Button
-                                id='product3_button'
-                                        style={{ marginLeft: '20px' ,position: '', right: '35%',
-                                                                                                    															background: 'rgb(250, 149, 129)',
-                                                                                                                    border: '2px solid ghostwhite',
-                                                                                                                    color: 'ghostwhite',
-                                                                                                                    marginLeft: '20px',
-                                        }}
-
+                                    id='product3_button'
+                                    style={{ marginLeft: '20px' ,position: '', right: '35%',
+                                    background: 'rgb(250, 149, 129)',
+                                    border: '2px solid ghostwhite',
+                                    color: 'ghostwhite',
+                                    marginLeft: '20px',
+                                    }}
                                         onClick={this.anzeigenBerrechnungProdukt3}
                                     > {this.props.t('fertigungsauftraege.calcview')}</Button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <Button
-                                     id=''
-                                        style={{ marginLeft: '20px' ,position: '', right: '35%',
-                                                                                        															background: 'rgb(250, 149, 129)',
-                                                                                                                    border: '2px solid ghostwhite',
-                                                                                                                    color: 'ghostwhite',
-                                                                                                                    marginLeft: '20px',
-                                        }}
-                                        onClick={this.epsProdukt3}
-                                    > {this.props.t('fertigungsauftraege.useeps')}</Button>
-                                                                                                                                <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset3} style={{
-                                                        															background: 'rgb(250, 149, 129)',
-                                                                                                                    border: '2px solid ghostwhite',
-                                                                                                                    color: 'ghostwhite',
-                                                                                                                    margin: '20px',
-                                                        right: '56px'}}> {this.props.t('fertigungsauftraege.resetbutton')}</Button>
-
-                                </tr>
+                                <Button
+                                    id=''
+                                    style={{ marginLeft: '20px' ,position: '', right: '35%',
+                                        background: 'rgb(250, 149, 129)',
+                                        border: '2px solid ghostwhite',
+                                        color: 'ghostwhite',
+                                        marginLeft: '20px',
+                                    }}
+                                    onClick={this.epsProdukt3}
+                                > {this.props.t('fertigungsauftraege.useeps')}</Button>
+                                <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset3} style={{
+                                    background: 'rgb(250, 149, 129)',
+                                    border: '2px solid ghostwhite',
+                                    color: 'ghostwhite',
+                                    margin: '20px',
+                                    right: '56px'}}> {this.props.t('fertigungsauftraege.resetbutton')}</Button>
+                            </tr>
                             <tr style={{visibility: 'hidden'}}>hello </tr>
                             <tr style={{padding:'25px'}}>
                             <table style={{margin:'auto'}}>
-										<tbody>
+                                <tbody>
+                                    <tr>
+                                    <td></td>
+                                    <td>{this.props.t('fertigungsauftraege.article')}</td>
+                                        { displayProdukt3 && <React.Fragment>
+                                            <th className="tg-0pky"
+                                                style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.salesrequest')}</th>
+                                            <th className="tg-0lax"
+                                                style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.transferqueue')}</th>
+                                            <th className="tg-0lax"
+                                                style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.planningstockvalue')}</th>
+                                            <th className="tg-0lax"
+                                                style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.availablestockvalue')}</th>
+                                            <th className="tg-0lax"
+                                                style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.queue')}</th>
+                                            <th className="tg-0lax"
+                                                style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.workingorder')}</th>
+                                    <th class="tg-0lax" style={{ padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.nichteps')}</th>
+                                        {/* <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ better_engpass[1][number]} </td> */}
+                                    </React.Fragment>
+                                    }
+                                    <td style={{ padding: '0 0 0 15px'}}>
+                                        <div  style={{ padding: '0 0 0 15px'}}>{this.props.t('fertigungsauftraege.amount')} </div>
+                                        </td>
+                                        {/* <td style={{ whiteSpace: 'none', marginLeft: '15px'}} > {this.props.t('fertigungsauftraege.maxamount')} </td> */}
+                                    </tr>
+                                        { this.state.fertigungsaufträge &&   Reihenfolge3.map( (number) =>
                                             <tr>
-                                            <td></td>
- 											<td>{this.props.t('fertigungsauftraege.article')}</td>
-                                             { displayProdukt3 && <React.Fragment>
-                                                 <th className="tg-0pky"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.salesrequest')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.transferqueue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.planningstockvalue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.availablestockvalue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.queue')}</th>
-                                                 <th className="tg-0lax"
-                                                     style={{padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.workingorder')}</th>
-                                            <th class="tg-0lax" style={{ padding: '0 0 0 20px'}}>{this.props.t('fertigungsauftraege.nichteps')}</th>
-                                                {/* <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ better_engpass[1][number]} </td> */}
-
-                                            </React.Fragment>
-                                          }
- 											<td style={{ padding: '0 0 0 15px'}}>
-                                             <div  style={{ padding: '0 0 0 15px'}}>{this.props.t('fertigungsauftraege.amount')} </div>
-                                             </td>
-                                             {/* <td style={{ whiteSpace: 'none', marginLeft: '15px'}} > {this.props.t('fertigungsauftraege.maxamount')} </td> */}
-
-
-										</tr>
-                                    { this.state.fertigungsaufträge &&   Reihenfolge3.map( (number) =>
-                                        <tr>
                                                 <td> {bezeichnerErz[number]}</td>
-
                                             <td>
                                                  <input style={{ margin: '0 5px 0 0 '}} onChange={this.handleChange} tabindex='-1'
                                                  key={'a'+ number } type="number" autoComplete='off' size="4" name={number} value={number} maxLength="5" type=" " />
                                             </td>
-
                                             {/* <td>
                                                 <i>
 
@@ -2711,138 +2530,100 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                             <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[3][number].waiting_items} </td>
                                             <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ dispo_dict[3][number].producing_items} </td>
                                             {/* <th class="tg-0lax" style={{ padding: '0 0 0 20px'}}>nicht produzierbar (E.p.s)</th> */}
-                                                <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ better_engpass[3][number]} </td>
-
+                                            <td style={{ textAlign: 'center', whiteSpace:'nowrap' }}> -{ better_engpass[3][number]} </td>
                                             </React.Fragment> }
                                             <td style={{ padding: '0 0 0 26px'}}>
-
-
-                                                    {/* <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                                    key={'b'+ number } type="number" autoComplete='off' size="4" name={`3_menge${number}`} value={fertigungsaufträge1[3][number][`menge${number}`] } maxLength="5" type="number" />
-                                                                    */}
                                             { console.log('color_x', better_engpass_color)}
                                             {  better_engpass[3][number] && !epsProdukt3Angewand && (
-                                                 <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                                 key={'b'+ number } style={{ outline: '3px solid red' }} type="number" autoComplete='off' size="4" name={`3_menge${number}`} value={fertigungsaufträge1[3][number][`menge${number}`] } maxLength="5" type="number" />
-
+                                                <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
+                                                key={'b'+ number } style={{ outline: '3px solid red' }} type="number" autoComplete='off' size="4" name={`3_menge${number}`} value={fertigungsaufträge1[3][number][`menge${number}`] } maxLength="5" type="number" />
                                             )}
                                             { better_engpass[3][number] && epsProdukt3Angewand && (
-
                                                 <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
                                                 key={'b'+ number } type="number" autoComplete='off' size="4" name={`3_menge${number}`} value={fertigungsaufträge1[3][number][`menge${number}`] } maxLength="5" type="number" />
-
                                             )}
                                             { !better_engpass[3][number] && (
-
-                                            <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
-                                            key={'b'+ number } type="number" autoComplete='off' size="4" name={`3_menge${number}`} value={fertigungsaufträge1[3][number][`menge${number}`] } maxLength="5" type="number" />
-
+                                                <input onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}
+                                                key={'b'+ number } type="number" autoComplete='off' size="4" name={`3_menge${number}`} value={fertigungsaufträge1[3][number][`menge${number}`] } maxLength="5" type="number" />
                                             )}
-
                                             </td>
                                             {/* <td style={{ marginLeft: '15px'}}>
                                                 {ffx_engpass[3][number]}
                                             </td> */}
                                         </tr>
                                     )}
-
 									</tbody></table>
-                            </tr>
-                            <tr>
-													<td>
-														<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{
-                                                                    margin:' 0px 0px 5px 4px',
-                                                                    position: 'relative',
-                                                                    top: '-2px',
-                                                                    background: 'rgb(250, 149, 129)',
-                                                                    border: '2px solid ghostwhite',
-                                                                    color: 'ghostwhite',
-                                                        }}>
-                                                         <Link style={{ color: 'ghostwhite' }}to='/Sales2'>
-                                                             {this.props.t('fertigungsauftraege.backbutton')}
-                                                         </Link>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{
+                                                margin:' 0px 0px 5px 4px',
+                                                position: 'relative',
+                                                top: '-2px',
+                                                background: 'rgb(250, 149, 129)',
+                                                border: '2px solid ghostwhite',
+                                                color: 'ghostwhite',
+                                            }}>
+                                                <Link style={{ color: 'ghostwhite' }}to='/Sales2'>
+                                                    {this.props.t('fertigungsauftraege.backbutton')}
+                                                </Link>
 
-                                                             </Button>
-													</td>
+                                                </Button>
+                                        </td>
+                                        <td style={{ position: 'relative'}}>
+                                            <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ position: 'absolute' , top: '3px' , right: '7px', margin: '0 0 0 0 ',
+                                                background: 'rgb(250, 149, 129)',
+                                                border: '2px solid ghostwhite',
+                                                color: 'ghostwhite',
+                                        }}>
+                                        <Link style={{ color: 'ghostwhite' }}to='/Bestellungen'>
+                                            {this.props.t('fertigungsauftraege.forwardbutton')}
+                                        </Link>
 
-													<td style={{ position: 'relative'}}>
-                                                        <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ position: 'absolute' , top: '3px' , right: '7px', margin: '0 0 0 0 ',
-                                                    															background: 'rgb(250, 149, 129)',
-                                                                                                                border: '2px solid ghostwhite',
-                                                                                                                color: 'ghostwhite',
-                                                    }}>
-                                                    <Link style={{ color: 'ghostwhite' }}to='/Bestellungen'>
-                                                        {this.props.t('fertigungsauftraege.forwardbutton')}
-                                                    </Link>
-
-                                                    </Button>
-
-
-													</td>
-
-												</tr>
-
-						</tbody>
-                        </div>
+                                        </Button>
+                                        </td>
+                                 </tr>
+                                </tbody>
+                            </div>
                         </table>
-						</div>
+                    </div>  
                     <div style={{ display:' none'}}>
                         <Sales2 setClick={click => this.clickChild = click} ref={this.child} alwaysCalledFromSales2={true} calledFromSales2={changeDetected} HIDEblackcalledFromSales2={true} style={{display:'none'}} übersetzung={this.state.übersetzung} />
                     </div>
-
-
-                    {/* <div style={{ display:' none'}}> */}
-
-
                     <Button
-                                     id='product1_button'
-                                        style={{ marginLeft: '20px' ,position: '', right: '35%',
-                                        background: 'rgb(250, 149, 129)',
-                                        border: '2px solid ghostwhite',
-                                        color: 'ghostwhite',
-                                        margin: '20px',
-                                        position: 'relative',
-                                        right: '-350px'
-
-                                    }}
-                                        onClick={this.anzeigenBerrechnungEPS}
-
-                                        > Erklärung EPS </Button>
-                                    {/* > {this.props.t('fertigungsauftraege.calcview')}</Button> */}
-                                     {/* ugur */}
-
+                        id='product1_button'
+                        style={{ marginLeft: '20px' ,position: '', right: '35%',
+                        background: 'rgb(250, 149, 129)',
+                        border: '2px solid ghostwhite',
+                        color: 'ghostwhite',
+                        margin: '20px',
+                        position: 'relative',
+                        right: '-350px'
+                    }}
+                        onClick={this.anzeigenBerrechnungEPS}
+                        > Erklärung EPS </Button>
                     { !this.state.berrechnungEPSAnzeigen && (
                         <div style={{ height: '200px'}}> </div>
-
                     )}
-
                     { this.state.berrechnungEPSAnzeigen && (
-
                     <div>
-
                     <div style={{ border: '1px solid black', background: 'ghostwhite', margin: '15px 0 15px 0' ,padding: '15px'}}>
                         <h2> {this.props.t('fertigungsauftraege.title1')}</h2>
                         <p> {this.props.t('fertigungsauftraege.summary1')}
                             {this.props.t('fertigungsauftraege.summary2')} </p>
                         <p> {this.props.t('fertigungsauftraege.summary3')}
                             {this.props.t('fertigungsauftraege.summary4')} </p>
-
                         </div>
-
                         <div style={{ border: '1px solid black', background: 'ghostwhite', margin: '15px 0 15px 0' ,padding: '15px'}}>
                             <h2> {this.props.t('fertigungsauftraege.title2')}</h2>
-
                         <div style={{ border: '1px solid black', padding: '10px'}}>
                         <h2> {this.props.t('fertigungsauftraege.productnumber1')} </h2>
                         {Reihenfolge1.map( integer =>
                         <div>
                         { better_engpass[1][integer] && (
-
-
                             <div style={{ border: '1px solid black', padding: '10px', margin: '10px'}}>
                             <p style={{ padding: '10px', color: 'red'}}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{this.props.t('fertigungsauftraege.erzeugnis')} { integer} </p>
                                 {/* numbers */}
-
                                 <p> {this.props.t('fertigungsauftraege.calc')}  &nbsp; &nbsp; &nbsp;  {this.props.t('fertigungsauftraege.fehlkaufteil')} * {this.props.t('fertigungsauftraege.formelerzeugnisse')} </p>
                                     {Object.keys(verwendung_p1_v2[integer]).map( kaufteil =>
                                     <div name={`E_${integer}`}>
@@ -2855,26 +2636,20 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                         )}
                                         </div>
                                     )
-
                                 }
                                 { document.getElementsByName('E_1')[0] && (document.getElementsByName('E_1')[0].style.border =' 4px solid red')}
-            {console.log('hier_t', eps_PRObedarf)}
                             </div>
                             )}
                             </div>
                         )}
-
                         <h2> {this.props.t('fertigungsauftraege.productnumber2')} </h2>
                         {Reihenfolge2.map( integer =>
                         <div>
                         { better_engpass[2][integer] && (
-
-
                             <div style={{ border: '1px solid black', padding: '10px', margin: '10px'}}>
                             <p style={{ padding: '10px', color: 'red'}}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{this.props.t('fertigungsauftraege.erzeugnis')} { integer} </p>
                             {/* ugur */}
                                 {/* numbers */}
-
                                 <p> {this.props.t('fertigungsauftraege.calc')}  &nbsp; &nbsp; &nbsp;  {this.props.t('fertigungsauftraege.fehlkaufteil')} * {this.props.t('fertigungsauftraege.formelerzeugnisse')} </p>
                                     {Object.keys(verwendung_p2_v2[integer]).map( kaufteil =>
                                     <div>
@@ -2887,7 +2662,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                         </div>
                                     )
                                 }
-            {console.log('hier_t', eps_PRObedarf)}
                             </div>
                             )}
                             </div>
@@ -2897,8 +2671,6 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                         {Reihenfolge3.map( integer =>
                         <div>
                         { better_engpass[3][integer] && (
-
-
                             <div style={{ border: '1px solid black', padding: '10px', margin: '10px'}}>
                             <p style={{ padding: '10px', color: 'red'}}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{this.props.t('fertigungsauftraege.erzeugnis')} { integer} </p>
                             {/* ugur */}
@@ -2916,76 +2688,59 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                         </div>
                                     )
                                 }
-            {console.log('hier_t', eps_PRObedarf)}
                             </div>
                             )}
                             </div>
                         )}
-
-
                         </div>
                         </div>
-
                         <div style={{ border: '1px solid black', background: 'ghostwhite', margin: '15px 0 15px 0' ,padding: '15px'}}>
-                        <h2> {this.props.t('fertigungsauftraege.title2')}</h2>
-                        {Object.keys(menge).map( number =>
-                        <React.Fragment>
-
-                            <div style={{ border: '1px solid black', padding: '10px'}}>
-
-                            <p> {this.props.t('fertigungsauftraege.kaufteil')} {number}: </p>
-                            { console.log('eventuelleZugänge', eventuelleZugänge)}
-                            <div style={{ display: 'none'}}>
-                                { !eps_p1_bedarfProProdukt[number] && (eps_p1_bedarfProProdukt[number] = 0)}
-                                { !eps_p2_bedarfProProdukt[number] && (eps_p2_bedarfProProdukt[number] = 0)}
-                                { !eps_p3_bedarfProProdukt[number] && (eps_p3_bedarfProProdukt[number] = 0)}
-                                { !eps_PRObedarf[1][number] && (eps_PRObedarf[1][number] = 0)}
-                                { !eps_PRObedarf[2][number] && (eps_PRObedarf[2][number] = 0)}
-                                { !eps_PRObedarf[3][number] && (eps_PRObedarf[3][number] = 0)}
-                            </div>
-                            <p style={{ display: 'none'}}> {!eventuelleZugänge[number] && (eventuelleZugänge[number] = 0)}</p>
-                            <p> {`${menge[number]} ${this.props.t('fertigungsauftraege.lagerbestand')} - ${produktion[number]} ${this.props.t('fertigungsauftraege.verbrauch')} + ${eventuelleZugänge[number]} ${this.props.t('fertigungsauftraege.zugang')} = ${minus[number]} ${this.props.t('fertigungsauftraege.fehlkauf1')}` }</p>
-                            <p> {this.props.t('fertigungsauftraege.example')}     &nbsp;        {`${this.props.t('fertigungsauftraege.formelgesamt')} K${number} ${this.props.t('fertigungsauftraege.proprodukt')}`} </p>
-                            <p> {`P1:`}      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;         {`${minus[number]} * (${eps_p1_bedarfProProdukt[number]} / ${eps_gesamtbedarf[number]} ) = ${eps_PRObedarf[1][number]}`} </p>
-                            <p> {`P2:`}     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;         {` ${minus[number]} * (${eps_p2_bedarfProProdukt[number]} / ${eps_gesamtbedarf[number]} ) = ${eps_PRObedarf[2][number]}`} </p>
-                            <p> {`P3:`}     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;          {`${minus[number]} * (${eps_p3_bedarfProProdukt[number]} / ${eps_gesamtbedarf[number]} ) = ${eps_PRObedarf[3][number]}`} </p>
-                            </div>
-                            <br></br>
-                        </React.Fragment>
+                            <h2> {this.props.t('fertigungsauftraege.title2')}</h2>
+                            {Object.keys(menge).map( number =>
+                                <React.Fragment>
+                                    <div style={{ border: '1px solid black', padding: '10px'}}>
+                                    <p> {this.props.t('fertigungsauftraege.kaufteil')} {number}: </p>
+                                    { console.log('eventuelleZugänge', eventuelleZugänge)}
+                                    <div style={{ display: 'none'}}>
+                                        { !eps_p1_bedarfProProdukt[number] && (eps_p1_bedarfProProdukt[number] = 0)}
+                                        { !eps_p2_bedarfProProdukt[number] && (eps_p2_bedarfProProdukt[number] = 0)}
+                                        { !eps_p3_bedarfProProdukt[number] && (eps_p3_bedarfProProdukt[number] = 0)}
+                                        { !eps_PRObedarf[1][number] && (eps_PRObedarf[1][number] = 0)}
+                                        { !eps_PRObedarf[2][number] && (eps_PRObedarf[2][number] = 0)}
+                                        { !eps_PRObedarf[3][number] && (eps_PRObedarf[3][number] = 0)}
+                                    </div>
+                                    <p style={{ display: 'none'}}> {!eventuelleZugänge[number] && (eventuelleZugänge[number] = 0)}</p>
+                                    <p> {`${menge[number]} ${this.props.t('fertigungsauftraege.lagerbestand')} - ${produktion[number]} ${this.props.t('fertigungsauftraege.verbrauch')} + ${eventuelleZugänge[number]} ${this.props.t('fertigungsauftraege.zugang')} = ${minus[number]} ${this.props.t('fertigungsauftraege.fehlkauf1')}` }</p>
+                                    <p> {this.props.t('fertigungsauftraege.example')}     &nbsp;        {`${this.props.t('fertigungsauftraege.formelgesamt')} K${number} ${this.props.t('fertigungsauftraege.proprodukt')}`} </p>
+                                    <p> {`P1:`}      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;         {`${minus[number]} * (${eps_p1_bedarfProProdukt[number]} / ${eps_gesamtbedarf[number]} ) = ${eps_PRObedarf[1][number]}`} </p>
+                                    <p> {`P2:`}     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;         {` ${minus[number]} * (${eps_p2_bedarfProProdukt[number]} / ${eps_gesamtbedarf[number]} ) = ${eps_PRObedarf[2][number]}`} </p>
+                                    <p> {`P3:`}     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;          {`${minus[number]} * (${eps_p3_bedarfProProdukt[number]} / ${eps_gesamtbedarf[number]} ) = ${eps_PRObedarf[3][number]}`} </p>
+                                    </div>
+                                    <br></br>
+                                </React.Fragment>
                             )}
-
                         </div>
-
-                        <div style={{ border: '1px solid black', background: 'ghostwhite', margin: '15px 0 15px 0' ,padding: '15px'}}>
-
+                    <div style={{ border: '1px solid black', background: 'ghostwhite', margin: '15px 0 15px 0' ,padding: '15px'}}>
                         <h2> {this.props.t('fertigungsauftraege.title3')} </h2>
                             <p> {this.props.t('fertigungsauftraege.title3text1')}</p>
                             <p> {this.props.t('fertigungsauftraege.title3text2')}</p>
                         </div>
-
-    <p stlye={{ display: 'none'}}> { }</p>
-
+                            <p stlye={{ display: 'none'}}> { }</p>
                         <div style={{ border: '1px solid black', background: 'ghostwhite', margin: '15px 0 15px 0' ,padding: '15px'}}>
-
                             <h2> {this.props.t('fertigungsauftraege.title4')}</h2>
                             <p>{this.props.t('fertigungsauftraege.title4text1')}</p>
                             <p> {this.props.t('fertigungsauftraege.title4text2')} </p>
-
                         <h3> {this.props.t('fertigungsauftraege.title5')} </h3>
-
                         {minusP1.map(number =>
                             <React.Fragment>
                             <div style={{ border: '1px solid black' , padding: '10px'}}>
-
                             <p> {this.props.t('fertigungsauftraege.kaufteil')} {number} </p>
                             <p> {Math.ceil(minus_after_trippeling[number])} ({this.props.t('fertigungsauftraege.fehlkaufteil')}) / {verwendung[3][number]} {this.props.t('fertigungsauftraege.faktorverwendung')} = {Math.ceil(minus_after_trippeling[number] / verwendung[1][number])} {this.props.t('fertigungsauftraege.fehlauftraege')} {erzeugnisse[1][number]})</p>
                             </div>
                             <br></br>
                             </React.Fragment>
                         )}
-
                         <h3> {this.props.t('fertigungsauftraege.title7')} </h3>
-
                         {minusP2.map(number =>
                             <React.Fragment>
                             <div style={{ border: '1px solid black' , padding: '10px'}}>
@@ -2996,9 +2751,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                             <br></br>
                             </React.Fragment>
                         )}
-
                         <h3> {this.props.t('fertigungsauftraege.title8')} </h3>
-
                         {minusP3.map(number =>
                             <React.Fragment>
                             <div style={{ border: '1px solid black' , padding: '10px'}}>
