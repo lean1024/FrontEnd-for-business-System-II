@@ -683,7 +683,7 @@ class Bestellungen extends Component {
 									</tr>
 									<tr>
 										<td>
-											<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
+											<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
 													background: 'rgb(250, 149, 129)',
 													border: '2px solid ghostwhite',
 													color: 'ghostwhite',
@@ -696,7 +696,7 @@ class Bestellungen extends Component {
 											</Button>
 										</td>
 										<td>
-											<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
+											<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
 												background: 'rgb(250, 149, 129)',
 												border: '2px solid ghostwhite',
 												color: 'ghostwhite',
@@ -706,7 +706,7 @@ class Bestellungen extends Component {
 											}}> {this.props.t('orders.buttonreset')} </Button>
 										</td>
 										<td style={{ position: 'relative'}}>
-											<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+											<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
 														background: 'rgb(250, 149, 129)',
 														border: '2px solid ghostwhite',
 														color: 'ghostwhite',
@@ -725,7 +725,7 @@ class Bestellungen extends Component {
 						</div>
 						</table>
 					</div>
-						<Button
+						<Button className='myButtons' 
 							id='product1_button'
 								style={{ marginLeft: '20px' ,position: '', right: '35%',
 								background: 'rgb(250, 149, 129)',

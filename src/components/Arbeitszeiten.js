@@ -6,6 +6,7 @@ import { Button, input } from 'semantic-ui-react';
 import { translate } from "react-multi-lang";
 import { Link, Events, ScrollElement, Element } from "react-scroll";
 
+
 class Arbeitszeiten extends Component {
 
 	state = { arbeitszeiten: {}, arbeitszeiten_warteschlange: {}, arbeitszeiten_zustand:[] , zeiger_zustand:0, erklärung: false}
@@ -236,10 +237,12 @@ class Arbeitszeiten extends Component {
 
 		console.log('dictonary_warteschlange')
     console.log(dictonary_warteschlange)
-
+		console.log('public url: ', process.env.PUBLIC_URL)
 		console.log('arbeitszeiten_', arbeitszeiten)
 		return (
-			<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' }}>
+			<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white',
+				backgroundImage: `url(https://images.fineartamerica.com/images-medium-large-5/1890-bicycle-patent-minimal-blueprint-nikki-marie-smith.jpg)`
+			}}>
 				<table style={{backgroundColor:'#c1c1bf',margin:'auto' }}>
 				<div style={{ border: '3px solid#f0f0f0'}}>
 					<tbody>
@@ -325,7 +328,7 @@ class Arbeitszeiten extends Component {
 										<td>
 										</td>
 										<td>
-										<Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px',
+										<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px',
 											background: 'rgb(250, 149, 129)',
 											border: '2px solid ghostwhite',
 											color: 'ghostwhite',
@@ -339,7 +342,7 @@ class Arbeitszeiten extends Component {
 										</Button>
 										</td>
 										<td style={{ position: 'relative'}}>
-											<Button
+											<Button className='myButtons' 
 											onClick={this.handleReset}
 											onFocus={ this.handleFocus} onBlur={this.handleBlur}
 													style= {{
@@ -360,7 +363,7 @@ class Arbeitszeiten extends Component {
 			</tbody>
 			</div>
 		</table>
-			<Button
+			<Button className='myButtons' 
 				id='product1_button'
 					style={{ marginLeft: '20px' ,position: '', right: '35%',
 					background: 'rgb(250, 149, 129)',
