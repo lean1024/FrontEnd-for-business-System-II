@@ -28,7 +28,7 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" style= ' background: #8bacbd;'
+    <div id="root"  
 
     ></div>
     <!--
@@ -60,26 +60,29 @@ button {
     font-family: Verdana !important; 
 }
 
-div {
-  border-radius: 5px;
-}
-
-
 nav {
-  background: #fa9581 !important;
+  /* background: #627FB0 !important; */
   border-radius: 5px;
-  border: 2px solid white !important;
+  /* border: 2px solid black !important; */
   font-family: Verdana !important; 
+  background: white !important;
+
+   
 }
 
-a {
-  color: ghostwhite
+nav li {
+  background: #92AE4A;
+  height:45px;
+}
 
+
+#root {
+  background: #92AE4A ;
 }
 
 table, tr , td ,th  {
   border-radius:5px !important;
-  background: #8bacbd !important; 
+  background:  #627FB0 !important; 
   font-family: Verdana !important; 
   color: ghostwhite;
   font-weight:900;
@@ -87,6 +90,31 @@ table, tr , td ,th  {
   padding:5px;
 }
 
+.alternativeButton {
+  background: #BD6152 !important;
+}
+
+.myButtons {
+  margin: '5px 0 0 0 ' !important;
+  background: #BD6152 !important;
+  border: '2px solid ghostwhite' !important;
+  color: 'ghostwhite' !important;
+  position: 'relative' !important;
+  top: '12px' !important;
+}
+
+div {
+  border-radius: 5px;
+}
+
+a {
+  color: ghostwhite
+}
+
+a:focus {
+  color:red;
+}
+ 
 select, option {
   color: rgb(40 , 40, 40);
 }
