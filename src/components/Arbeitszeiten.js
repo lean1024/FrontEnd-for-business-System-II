@@ -165,7 +165,7 @@ class Arbeitszeiten extends Component {
 
 		this.setState({arbeitszeiten_warteschlange: arbeitszeiten_warteschlange});
 
-		document.getElementById('Arbeitszeiten').childNodes[0].setAttribute('style', 'color:black;  ')
+		document.getElementById('Arbeitszeiten').childNodes[0].setAttribute('style', 'color:darkred;  ')
 
 		window.scrollTo(0, 0)
 		console.log('wuwu')
@@ -328,7 +328,7 @@ class Arbeitszeiten extends Component {
 										<td>
 										</td>
 										<td>
-										<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px',
+										<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px',
 											background: 'rgb(250, 149, 129)',
 											border: '2px solid ghostwhite',
 											color: 'ghostwhite',
@@ -342,7 +342,7 @@ class Arbeitszeiten extends Component {
 										</Button>
 										</td>
 										<td style={{ position: 'relative'}}>
-											<Button className='myButtons' 
+											<Button className='myButtons backgroundColor1' 
 											onClick={this.handleReset}
 											onFocus={ this.handleFocus} onBlur={this.handleBlur}
 													style= {{
@@ -363,7 +363,7 @@ class Arbeitszeiten extends Component {
 			</tbody>
 			</div>
 		</table>
-			<Button className='myButtons' 
+			<Button className='myButtons backgroundColor1' 
 				id='product1_button'
 					style={{ marginLeft: '20px' ,position: '', right: '35%',
 					background: 'rgb(250, 149, 129)',

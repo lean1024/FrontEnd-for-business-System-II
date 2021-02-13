@@ -223,11 +223,12 @@ class Sales2 extends Component {
                 </tbody>
                 </table>
             <div style={{
-                'background': 'rgb(193, 193, 191)',
                 'padding': '25px',
                 borderRadius: '5px',
                 border: '1px solid white',
                 marginTop: '30px'}}
+
+                className='backgroundColor1'
             >
                 <label>
                     {this.props.t('lagerbestand.uploadfile')}
@@ -261,7 +262,7 @@ class Sales2 extends Component {
                     }}href={this.state.input} download="input.xml">download</a>
                 )}
             </div>
-            <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+            <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
                 background: 'rgb(250, 149, 129)',
                 border: '2px solid ghostwhite',
                 color: 'ghostwhite',
@@ -276,7 +277,7 @@ class Sales2 extends Component {
             </Button>
 
             { allowWeiter && (
-                <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+                <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
                     background: 'rgb(250, 149, 129)',
                     border: '2px solid ghostwhite',
                     color: 'ghostwhite',
@@ -369,7 +370,7 @@ class Sales2 extends Component {
         console.log('didmount')
         console.log(localStorage.get('sales1'))
         const { HIDEblackcalledFromSales2 } = this.props;
-        if ( !HIDEblackcalledFromSales2) document.getElementById('Sales2').childNodes[0].setAttribute('style', 'color:black;  ')
+        if ( !HIDEblackcalledFromSales2) document.getElementById('Sales2').childNodes[0].setAttribute('style', 'color:darkred;  ')
 
         // getting xml
         const text = localStorage.get('xml')

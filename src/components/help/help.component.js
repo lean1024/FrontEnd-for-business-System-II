@@ -55,7 +55,7 @@ class Help extends React.Component {
     }
 
     componentDidMount () {
-		document.getElementById('help').childNodes[0].setAttribute('style', 'color:black;  ')
+		document.getElementById('help').childNodes[0].setAttribute('style', 'color:darkred;  ')
 
 
     }

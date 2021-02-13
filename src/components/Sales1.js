@@ -35,7 +35,7 @@ class Sales1 extends Component {
   }
 
 	componentDidMount() {
-		document.getElementById('Sales1').childNodes[0].setAttribute('style', 'color:black;  ')
+		document.getElementById('Sales1').childNodes[0].setAttribute('style', 'color:darkred;  ')
 
 		const rememberedState = localStorage.get('sales1');
 		console.log(rememberedState);
@@ -121,7 +121,7 @@ class Sales1 extends Component {
               </tbody>
               {/* </div> */}
             </table>
-            <Button onFocus={ this.handleFocus} onBlur={this.handleBlur} 
+            <Button className='myButtons backgroundColor1' onFocus={ this.handleFocus} onBlur={this.handleBlur} 
               onKeyPress={ e => {
                 if (e.key === 'ENTER' ) {
                   e.target.click();

@@ -237,7 +237,7 @@ reorder = (list, startIndex, endIndex) => {
   }
 
 	componentDidMount() {
-        document.getElementById('Reihenfolge').childNodes[0].setAttribute('style', 'color:black;  ')
+        document.getElementById('Reihenfolge').childNodes[0].setAttribute('style', 'color:darkred;  ')
         window.scrollTo(0, 0)
         const rememberedState = localStorage.get('fertigungsaufträge');
 
@@ -1518,7 +1518,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 
                             <td>
                                 <input name={`input${number}`} style={{maxWidth: '140px' }} onChange={this.onChangeSplittingMenge} onFocus={this.handleFocus} onBlur={this.handleBlur} style={{ }} autoComplete='off' size="4" value={this.state.splittingMenge} maxLength="5" type="text"  />
-                                <Button className='myButtons'  style={{marginLeft: '25px'}} name={number} index={index} onClick={this.splittingMenge}> {this.props.t('reihenfolge.buttonconfirm')} </Button>
+                                 <Button className='myButtons backgroundColor1'    style={{marginLeft: '25px'}} name={number} index={index} onClick={this.splittingMenge}> {this.props.t('reihenfolge.buttonconfirm')} </Button>
                             </td>
                         </tr>
 
@@ -1565,7 +1565,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                             <tr>
 
 													<td>
-														<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{
+														<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{
                                                                     margin:' 0px 0px 5px 4px',
                                                                     position: 'relative',
                                                                     top: '-2px',
@@ -1581,7 +1581,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 													</td>
 
 													<td style={{ position: 'relative'}}>
-                                                        <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ position: 'absolute' , top: '3px' , right: '7px', margin: '0 0 0 0 ',
+                                                        <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ position: 'absolute' , top: '3px' , right: '7px', margin: '0 0 0 0 ',
                                                     															background: 'rgb(250, 149, 129)',
                                                                                                                 border: '2px solid ghostwhite',
                                                                                                                 color: 'ghostwhite',
@@ -1591,7 +1591,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                                     </Link>
 
                                                     </Button>
-                                                        <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{ position: 'absolute' , top: '52px' ,
+                                                        <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{ position: 'absolute' , top: '52px' ,
                                                         															background: 'rgb(250, 149, 129)',
                                                                                                                     border: '2px solid ghostwhite',
                                                                                                                     color: 'ghostwhite',

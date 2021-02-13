@@ -38,7 +38,7 @@ class Sales2 extends Component {
 
 	componentDidMount() {
         const { calledFromSales2 } = this.props;
-        if ( !calledFromSales2) document.getElementById('Sales2').childNodes[0].setAttribute('style', 'color:black;  ')
+        if ( !calledFromSales2) document.getElementById('Sales2').childNodes[0].setAttribute('style', 'color:darkred;  ')
 
 
 
@@ -1773,7 +1773,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 </div>
 
 
-<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
     background: 'rgb(250, 149, 129)',
       border: '2px solid ghostwhite',
       color: 'ghostwhite',
@@ -1787,7 +1787,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 													
 </Button>
 
-{ sales2_ && <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  
+{ sales2_ && <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  
 onClick={this.handleReset}
 style={{  margin: '5px 0 0 0 ' ,
     background: 'rgb(250, 149, 129)',
@@ -1804,7 +1804,7 @@ style={{  margin: '5px 0 0 0 ' ,
 </Button> }
 
 { allowWeiter && (
-    <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+    <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
         background: 'rgb(250, 149, 129)',
         border: '2px solid ghostwhite',
         color: 'ghostwhite',

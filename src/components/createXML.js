@@ -11,7 +11,7 @@ class createXML extends Component {
     state = { input: false}
 
     componentDidMount(){
-        document.getElementById('download').childNodes[0].setAttribute('style', 'color:black;  ')
+        document.getElementById('download').childNodes[0].setAttribute('style', 'color:darkred;  ')
         document.addEventListener('keydown', this.logging)
     }
 

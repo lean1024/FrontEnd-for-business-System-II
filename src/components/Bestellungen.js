@@ -140,7 +140,7 @@ class Bestellungen extends Component {
 
 	componentDidMount() {
 		document.addEventListener('keydown', this.logging)
-		document.getElementById('Bestellungen').childNodes[0].setAttribute('style', 'color:black;  ')
+		document.getElementById('Bestellungen').childNodes[0].setAttribute('style', 'color:darkred;  ')
 		window.scrollTo(0, 0)
 		const bestellungen2 = localStorage.get('bestellungen');
 
@@ -683,7 +683,7 @@ class Bestellungen extends Component {
 									</tr>
 									<tr>
 										<td>
-											<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
+											<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
 													background: 'rgb(250, 149, 129)',
 													border: '2px solid ghostwhite',
 													color: 'ghostwhite',
@@ -696,7 +696,7 @@ class Bestellungen extends Component {
 											</Button>
 										</td>
 										<td>
-											<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
+											<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
 												background: 'rgb(250, 149, 129)',
 												border: '2px solid ghostwhite',
 												color: 'ghostwhite',
@@ -706,7 +706,7 @@ class Bestellungen extends Component {
 											}}> {this.props.t('orders.buttonreset')} </Button>
 										</td>
 										<td style={{ position: 'relative'}}>
-											<Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+											<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
 														background: 'rgb(250, 149, 129)',
 														border: '2px solid ghostwhite',
 														color: 'ghostwhite',
@@ -725,7 +725,7 @@ class Bestellungen extends Component {
 						</div>
 						</table>
 					</div>
-						<Button className='myButtons' 
+						<Button className='myButtons backgroundColor1' 
 							id='product1_button'
 								style={{ marginLeft: '20px' ,position: '', right: '35%',
 								background: 'rgb(250, 149, 129)',

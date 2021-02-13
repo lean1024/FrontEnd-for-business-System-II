@@ -496,7 +496,7 @@ class Fertigungsaufträge extends Component {
 
         this.updateErzeugnise_from_Reihenfolge()
 
-        document.getElementById('Fertigungsaufträge').childNodes[0].setAttribute('style', 'color:black;  ')
+        document.getElementById('Fertigungsaufträge').childNodes[0].setAttribute('style', 'color:darkred;  ')
 
 
         let übersetzung = {}
@@ -2252,7 +2252,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                     <tr style={{visibility: 'hidden'}}> hello</tr>
                         <tr style={{ textAlign: 'center' , padding: '25px', position: 'relative', margin: '20px'}}>
                             {this.props.t('fertigungsauftraege.productnumber1')}
-                            <Button className='myButtons' 
+                            <Button className='myButtons backgroundColor1' 
                                 id='product1_button'
                                 style={{ marginLeft: '20px' ,position: '', right: '35%',
                                     background: 'rgb(250, 149, 129)',
@@ -2262,7 +2262,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                 }}
                                 onClick={this.anzeigenBerrechnungProdukt1}
                             > {this.props.t('fertigungsauftraege.calcview')}</Button>
-                            <Button className='myButtons' 
+                            <Button className='myButtons backgroundColor1' 
                                 id=''
                                 style={{ marginLeft: '20px' ,position: '', right: '35%',
                                     background: 'rgb(250, 149, 129)',
@@ -2274,7 +2274,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                             > 
                                 {this.props.t('fertigungsauftraege.useeps')}
                             </Button>
-                            <Button className='myButtons'  
+                            <Button className='myButtons backgroundColor1'    
                                 onFocus={ this.handleFocus} 
                                 onBlur={this.handleBlur}  
                                 onClick={this.handleReset1} 
@@ -2357,7 +2357,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                             <tr style={{visibility: 'hidden'}}> hello</tr>
                             <tr style={{visibility: 'hidden'}}> hello</tr>
                             <tr style={{ textAlign: 'center' , padding: '25px'}}> {this.props.t('fertigungsauftraege.productnumber2')}
-                                <Button className='myButtons' 
+                                <Button className='myButtons backgroundColor1' 
                                 id='product2_button'
                                         style={{ marginLeft: '20px' ,position: '', right: '35%',
                                         background: 'rgb(250, 149, 129)',
@@ -2369,7 +2369,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
 
                                         onClick={this.anzeigenBerrechnungProdukt2}
                                     > {this.props.t('fertigungsauftraege.calcview')}</Button>
-                                    <Button className='myButtons' 
+                                    <Button className='myButtons backgroundColor1' 
                                      id=''
                                         style={{ marginLeft: '20px' ,position: '', right: '35%',
                                         background: 'rgb(250, 149, 129)',
@@ -2379,7 +2379,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                         }}
                                         onClick={this.epsProdukt2}
                                     > {this.props.t('fertigungsauftraege.useeps')}</Button>
-                                        <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset2} style={{
+                                        <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset2} style={{
                                             background: 'rgb(250, 149, 129)',
                                             border: '2px solid ghostwhite',
                                             color: 'ghostwhite',
@@ -2454,7 +2454,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                             <tr style={{visibility: 'hidden'}}> hello</tr>
                             <tr style={{visibility: 'hidden'}}> hello</tr>
                             <tr style={{ textAlign: 'center' , padding: '25px'}}> {this.props.t('fertigungsauftraege.productnumber3')}
-                                <Button className='myButtons' 
+                                <Button className='myButtons backgroundColor1' 
                                     id='product3_button'
                                     style={{ marginLeft: '20px' ,position: '', right: '35%',
                                     background: 'rgb(250, 149, 129)',
@@ -2464,7 +2464,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                     }}
                                         onClick={this.anzeigenBerrechnungProdukt3}
                                     > {this.props.t('fertigungsauftraege.calcview')}</Button>
-                                <Button className='myButtons' 
+                                <Button className='myButtons backgroundColor1' 
                                     id=''
                                     style={{ marginLeft: '20px' ,position: '', right: '35%',
                                         background: 'rgb(250, 149, 129)',
@@ -2474,7 +2474,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                     }}
                                     onClick={this.epsProdukt3}
                                 > {this.props.t('fertigungsauftraege.useeps')}</Button>
-                                <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset3} style={{
+                                <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset3} style={{
                                     background: 'rgb(250, 149, 129)',
                                     border: '2px solid ghostwhite',
                                     color: 'ghostwhite',
@@ -2556,7 +2556,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                     </tr>
                                     <tr>
                                         <td>
-                                            <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{
+                                            <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{
                                                 margin:' 0px 0px 5px 4px',
                                                 position: 'relative',
                                                 top: '-2px',
@@ -2571,7 +2571,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                                                 </Button>
                                         </td>
                                         <td style={{ position: 'relative'}}>
-                                            <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ position: 'absolute' , top: '3px' , right: '7px', margin: '0 0 0 0 ',
+                                            <Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ position: 'absolute' , top: '3px' , right: '7px', margin: '0 0 0 0 ',
                                                 background: 'rgb(250, 149, 129)',
                                                 border: '2px solid ghostwhite',
                                                 color: 'ghostwhite',
@@ -2590,7 +2590,7 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
                     <div style={{ display:' none'}}>
                         <Sales2 setClick={click => this.clickChild = click} ref={this.child} alwaysCalledFromSales2={true} calledFromSales2={changeDetected} HIDEblackcalledFromSales2={true} style={{display:'none'}} übersetzung={this.state.übersetzung} />
                     </div>
-                    <Button className='myButtons' 
+                    <Button className='myButtons backgroundColor1' 
                         id='product1_button'
                         style={{ marginLeft: '20px' ,position: '', right: '35%',
                         background: 'rgb(250, 149, 129)',
