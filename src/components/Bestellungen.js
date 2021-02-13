@@ -662,29 +662,7 @@ class Bestellungen extends Component {
 											</tr>
 											)
 										)}
-									<tr >
-										<div style={{position:'relative'}}>
-										<br></br>
-										<button id='createButton' onClick={this.onCreateNewItem}>{this.props.t('orders.buttoncreate')} </button>{this.props.t('orders.textnewitem')}
-										</div>
-									</tr>
-									<tr>
-										{/* { !bezeichnerKaufteile[this.state.newArtikel] && 
-											<span> Enter a id</span>
-										} */}
-										<td> {bezeichnerKaufteile[this.state.newArtikel]}</td>
-										<td><input id='newArtikel' onChange={this.handleOnChangeNewArtikel}style={{ margin: '0 5px 0 0 '}} tabIndex='' autoComplete='off' size="4"  value={this.state.newArtikel} maxLength="5" type="text"  /></td>
-										<td><input onChange={this.handleOnChangeAmount} onFocus={this.handleFocus} id='new_artikel_amount' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" name={''} value={this.state.newMenge} maxLength="5" type="text"  /></td>
-										<td>
-											<select onChange={this.handleOnChangeOption} onFocus={this.handleFocus} id='new_artikel_option' onBlur={this.handleBlur} style={{height: '30px'}} name={''} size="1" value={this.state.newOption} >
-												<option value="Normal">Normal</option>
-												<option value="Eil">Eil</option>
-												<option value="JIT">JIT</option>
-												<option value="Billiganbieter">Billiganbieter</option>
-												<option value="Sonderbestellung">Sonderbestellung</option>
-											</select>	
-										</td>
-									</tr>
+						
 
 									{/* <tr id='1234'>
 										<td id='1234AAA'>
@@ -733,6 +711,58 @@ class Bestellungen extends Component {
 						</div>
 						</table>
 
+						<div style={{
+							marginTop:'20px',
+							height:'112px',
+							width:'600px',
+						  paddingTop:'5px',
+							color: 'ghostwhite',
+							position: 'relative',
+							left: '107px',
+							border: '2px solid white',
+							
+							}}
+							className='backgroundColor2'
+						>
+							<div style={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
+								<h3> neuen Artikel hinzufügen</h3>
+							</div>
+							<div style={{display:'flex', justifyContent:'center', }}>
+								<div style={{}}>
+									{/* <p> neuen Artikel hinzufügen</p> */}
+								</div>
+								<table style={{width:'595px'}}>
+									<tbody>
+									<tr >
+										{/* <div style={{position:'relative'}}>
+										<br></br>
+										</div> */}
+									</tr>
+									<tr>
+										<td style={{ width:'140px'}}> 
+										 <p style={{position:'relative', left:'12px'}}>
+											{bezeichnerKaufteile[this.state.newArtikel]}
+											 
+										 </p>
+										</td>
+										<td style={{ width:'25px', position: 'relative', right: '-11px'}}><input id='newArtikel' onChange={this.handleOnChangeNewArtikel}style={{ margin: '0 5px 0 0 '}} tabIndex='' autoComplete='off' size="4"  value={this.state.newArtikel} maxLength="5" type="text"  /></td>
+										<td style={{ width:'25px', position:'relative', right:'7px'}}><input onChange={this.handleOnChangeAmount} onFocus={this.handleFocus} id='new_artikel_amount' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" name={''} value={this.state.newMenge} maxLength="5" type="text"  /></td>
+										<td style={{ width:'25px', position:'relative', right:'23px'}}>
+											<select onChange={this.handleOnChangeOption} onFocus={this.handleFocus} id='new_artikel_option' onBlur={this.handleBlur} style={{height: '30px'}} name={''} size="1" value={this.state.newOption} >
+												<option value="Normal">Normal</option>
+												<option value="Eil">Eil</option>
+												<option value="JIT">JIT</option>
+												<option value="Billiganbieter">Billiganbieter</option>
+												<option value="Sonderbestellung">Sonderbestellung</option>
+											</select>	
+										</td>
+										<td style={{width:'25px'}}>  <Icon size='large' name='add circle' onClick={this.onCreateNewItem}/> </td>
+
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 
 						<div style={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
 									<Button className='myButtons backgroundColor1 marginRight'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
