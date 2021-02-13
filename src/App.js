@@ -83,7 +83,7 @@ class App extends Component {
                 <Router >
                     <div className="container">
                         <nav className="navbar navbar-expand-lg navbar-light " style={{
-                            marginTop: '15px',
+                            // marginTop: '15px',
                             border: '1px solidwhite',
                             background: '#fa9581',
                             color: 'ghostwhite',
@@ -93,23 +93,16 @@ class App extends Component {
                         }}>
                             <div className="collpase navbar-collapse">
                                 <ul className="navbar-nav mr-auto">
-
-
-
                                     <li id='Sales1'>
-
                                         <Link style={{ color: 'ghostwhite' }} className="nav-link" to='/Sales1' >
                                             {this.props.t('navbar.prognosen')}
                                         </Link>
-
                                     </li>
-
                                     <li id='Sales2'>
                                         <Link style={{ color: 'ghostwhite' }} className="nav-link" to='/Sales2' >
                                             {this.props.t('navbar.lagerbestand')}
                                         </Link>
                                     </li>
-
                                     <li id='Fertigungsaufträge'  style={{ ...navbarItemStyle, ...displayNoneStyle }}>
                                         <Link style={{ color: 'ghostwhite' }} className="nav-link" to='/Fertigungsaufträge' >
                                             {this.props.t('navbar.fertigungsauftraege')}
@@ -159,7 +152,6 @@ class App extends Component {
                             </div>
                         </nav>
 
-
                         <br/>
                         <Route path="/Lagerwert" exact component={Lagerwert} />
                         <Route path="/edit/:id" component={EditTodo} />
@@ -179,9 +171,6 @@ class App extends Component {
                         <Route path='/Reihenfolge' component={Reihenfolge} />
                         <Route path='/help' component={Help} />
                     </div>
-
-
-
                 </Router>
                 <createXML style={{background: 'white', height: '400px', width: '400px' }}/>
             </div>
