@@ -261,7 +261,7 @@ class Sales2 extends Component {
                     }}href={this.state.input} download="input.xml">download</a>
                 )}
             </div>
-            <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+            <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
                 background: 'rgb(250, 149, 129)',
                 border: '2px solid ghostwhite',
                 color: 'ghostwhite',
@@ -276,7 +276,7 @@ class Sales2 extends Component {
             </Button>
 
             { allowWeiter && (
-                <Button onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+                <Button className='myButtons'  onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
                     background: 'rgb(250, 149, 129)',
                     border: '2px solid ghostwhite',
                     color: 'ghostwhite',

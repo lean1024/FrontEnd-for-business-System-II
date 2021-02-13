@@ -124,19 +124,21 @@ class Sales1 extends Component {
 </table>
 
 
-<Button onFocus={ this.handleFocus} onBlur={this.handleBlur} 
+<Button className='alternativeButton' onFocus={ this.handleFocus} onBlur={this.handleBlur} 
   onKeyPress={ e => {
     if (e.key === 'ENTER' ) {
       e.target.click();
     }
   }}
-style={{  margin: '5px 0 0 0 ' ,
-    background: 'rgb(250, 149, 129)',
-      border: '2px solid ghostwhite',
-      color: 'ghostwhite',
-      position: 'relative',
-      top: '12px'
-  }}> 
+  style={{  
+        margin: '5px 0 0 0 ' ,
+        background: 'rgb(250, 149, 129)',
+        border: '2px solid ghostwhite',
+        color: 'ghostwhite',
+        position: 'relative',
+        top: '12px'
+    }}
+  > 
 													
     <Link style={{ color: 'ghostwhite' }} to='/Sales2' >
       {this.props.t('prognosen.nextbutton')}
