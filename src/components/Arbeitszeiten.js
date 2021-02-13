@@ -5,6 +5,8 @@ import { Button, input } from 'semantic-ui-react';
 //import { Link } from "react-router-dom";
 import { translate } from "react-multi-lang";
 import { Link, Events, ScrollElement, Element } from "react-scroll";
+import { Icon } from 'semantic-ui-react'
+
 
 
 class Arbeitszeiten extends Component {
@@ -240,8 +242,7 @@ class Arbeitszeiten extends Component {
 		console.log('public url: ', process.env.PUBLIC_URL)
 		console.log('arbeitszeiten_', arbeitszeiten)
 		return (
-			<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white',
-				backgroundImage: `url(https://images.fineartamerica.com/images-medium-large-5/1890-bicycle-patent-minimal-blueprint-nikki-marie-smith.jpg)`
+			<div style={{ padding: '30px', margin: '0px 115px 0 120px',
 			}}>
 				<table style={{backgroundColor:'#c1c1bf',margin:'auto' }}>
 				<div style={{ border: '3px solid#f0f0f0'}}>
@@ -348,12 +349,14 @@ class Arbeitszeiten extends Component {
 													style= {{
 												background: 'rgb(250, 149, 129)',
 												border: '2px solid ghostwhite',
-												color: 'ghostwhite',
+												color: 'white',
 												position: 'relative',
 												left: '-5px',
 												margin: '19px 0px 0px 0px',
 												top: '-10px'
-										}}> {this.props.t('workingtimes.resetbutton')} </Button>
+										}}> 									
+										
+											<Icon style={{ position:'relative', left: '5px', marginRight: '5px' , color: 'white' }} name='undo' /> </Button>
 										</td>
 									</tr>
 							</tbody>
@@ -375,13 +378,28 @@ class Arbeitszeiten extends Component {
 						}}
 					onClick={this.anzeigenExpertModus}
 					> Expert modus </Button>
+					
 					{this.state.erklärung && (
 				<div>
-					<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}>
+					<div style={{display:'flex', justifyContent: 'auto' , padding: '30px', position: 'relative', top:'50px',
+						margin: '0px 115px 0 120px' ,}}>
+						<h3 style={{ fontWeight: `bold`, color: 'white'}} >
+						<Element  className="element" >
+							<Icon style={{ position:'relative', left: '5px', marginRight: '10px' }} name='	calculator' />  
+							Übersicht: alle Arbeitsplätze
+
+						</Element>
+					
+
+					</h3>
+					</div>
+
+					<div style={{ padding: '30px', margin: '0px 115px 0 120px'}}>
 					{ arbeitszeiten[1] && <React.Fragment>
 					<table class="tg">
 						<tr>
-							<th style={{ width: '33%'}}>{this.props.t('workingtimes.arbeitsplatz')} </th>
+					 
+							<th style={{ width: '33%'}}> {this.props.t('workingtimes.arbeitsplatz')} </th>
 							<th style={{ width: '33%'}}>{this.props.t('workingtimes.zeitbedarf')}</th>
 							<th style={{ width: '33%'}}>{this.props.t('workingtimes.zeitdeckungschichten')}</th>
 							<th style={{ width: '33%'}}>{this.props.t('workingtimes.zeitdeckungstunden')}</th>
@@ -511,12 +529,21 @@ class Arbeitszeiten extends Component {
 						}
 					</div>
 					{ arbeitszeiten_arbeitszeiten[1][29] && Object.keys(arbeitszeiten_arbeitszeiten).map( number =>
-					<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}>
-					<p style={{ fontWeight: `bold`, color: `red` }} >
+					<div style={{ 
+						padding: '30px', 
+						margin: '0px 115px 0 120px' ,
+						borderBottom: '2px solid white',
+						width: '728px',
+						borderRadius: '0px',
+					  // border: '2px solid white' ,
+					  // background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'
+					}}>
+					<h3 style={{ fontWeight: `bold`, color: 'white' }} >
 						<Element name={number} className="element" >
+						<Icon style={{ position:'relative', left: '5px', marginRight: '10px' }} name='	calculator' />  
 							{this.props.t('workingtimes.arbeitsplatz')} {number}
 						</Element>
-					</p>
+					</h3>
 					<table style={{ width: '100'}}class="tg">
 						<tr>
 							<th className="tg-0pky" colSpan="3">{this.props.t('workingtimes.arbeitszeit')}</th>
