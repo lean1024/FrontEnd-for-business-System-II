@@ -42,7 +42,7 @@ class Sales2 extends Component {
 
         return (
             // <div style={{ padding: '30px', margin: 'auto', width: '1400px' , position:'relative', right: '150px' ,border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}>
-            <div style={{ padding: '30px', margin: 'auto', width: '1400px' , position:'relative', right: '150px', border: '3px solid white'}}>
+            <div style={{ padding: '30px', margin: 'auto', width: '1415px' , position:'relative', right: '150px'}}>
                 <table style={{ backgroundColor:'#c1c1bf',margin:'auto' }}>
                 <tbody style={{ border: '1px solid#f0f0f0' }}>
                     <tr style={{ border: '1px solid#f0f0f0' }}>
@@ -59,7 +59,7 @@ class Sales2 extends Component {
                         <td style={{ border: '1px solid#f0f0f0' }} >{this.props.t('lagerbestand.penalty')}</td>
                     </tr>
                     <tr style={{ border: '1px solid#f0f0f0' }}>
-                        <td style={{ border: '1px solid#f0f0f0' }} >p1</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} > &nbsp;&nbsp;p1&nbsp;&nbsp;</td>
                         <td style={{ border: '1px solid#f0f0f0' }} >
                             <input
                                 onFocus={this.handleFocus}
@@ -113,7 +113,7 @@ class Sales2 extends Component {
                         </td>
                     </tr>
                     <tr style={{ border: '1px solid#f0f0f0' }}>
-                        <td style={{ border: '1px solid#f0f0f0' }} >p2</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >&nbsp;&nbsp;p2&nbsp;&nbsp;</td>
                         <td style={{ border: '1px solid#f0f0f0' }} >
                             <input
                                 onFocus={this.handleFocus}
@@ -167,7 +167,7 @@ class Sales2 extends Component {
                         </td>
                     </tr>
                     <tr style={{ border: '1px solid#f0f0f0' }}>
-                        <td style={{ border: '1px solid#f0f0f0' }} >p3</td>
+                        <td style={{ border: '1px solid#f0f0f0' }} >&nbsp;&nbsp;p3&nbsp;&nbsp;</td>
                         <td style={{ border: '1px solid#f0f0f0' }} >
                             <input
                                 onFocus={this.handleFocus}
@@ -228,9 +228,9 @@ class Sales2 extends Component {
                 border: '1px solid white',
                 marginTop: '30px'}}
 
-                className='backgroundColor1'
+                className='backgroundColor2'
             >
-                <label>
+                <label style={{color:'ghostwhite', fontWeight:'bold'}}>
                     {this.props.t('lagerbestand.uploadfile')}
                 <input
                     onFocus={this.handleFocus}
@@ -241,19 +241,20 @@ class Sales2 extends Component {
                     ref={input => { this.App = input; }} />
                 </label>
                 <br />
-                <button style={{
+                <Button style={{
                     background: 'rgb(250, 149, 129)',
                     border: '2px solid ghostwhite',
-                    color: 'black ',
-                    opacity: 0.67,
+                    color: 'ghostwhite ',
+                    opacity: 1,
                 }}
+                    className='myButtons backgroundColor1'
                     onFocus={this.handleFocus}
                     onBlur={this.handleBlur}
                     id='bestätigenButton'
                     onClick={this.dispo_function_twice}
                     type="submit">
                     {this.props.t('lagerbestand.confirmbutton')}
-                </button>
+                </Button>
                 {  this.state.input && (
                     <a style={{
                         'padding': '2px 10px 2px 10px',

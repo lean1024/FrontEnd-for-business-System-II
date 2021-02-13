@@ -4,6 +4,7 @@ import localStorage from 'local-storage';
 import { Button, input, Dropdown } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 import { translate } from 'react-multi-lang'
+import { Icon } from 'semantic-ui-react'
 
 
 class Bestellungen extends Component {
@@ -621,7 +622,7 @@ class Bestellungen extends Component {
 
 		return (
 			<React.Fragment>
-				<div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' }} >
+				<div style={{ padding: '30px', margin: '0px 115px 0 120px'  }} >
 					<table style={{backgroundColor:'#c1c1bf',margin:'auto'}}>
 						<div style={{ border: '3px solid#f0f0f0'}}>
 						<tbody>
@@ -661,28 +662,10 @@ class Bestellungen extends Component {
 											</tr>
 											)
 										)}
-									<tr >
-										<div style={{position:'relative'}}>
-										<br></br>
-										<button id='createButton' onClick={this.onCreateNewItem}>{this.props.t('orders.buttoncreate')} </button> {this.props.t('orders.textnewitem')}
-										</div>
-									</tr>
-									<tr>
-										<td> {bezeichnerKaufteile[this.state.newArtikel]}</td>
-										<td><input id='newArtikel' onChange={this.handleOnChangeNewArtikel}style={{ margin: '0 5px 0 0 '}} tabIndex='' autoComplete='off' size="4"  value={this.state.newArtikel} maxLength="5" type="text"  /></td>
-										<td><input onChange={this.handleOnChangeAmount} onFocus={this.handleFocus} id='new_artikel_amount' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" name={''} value={this.state.newMenge} maxLength="5" type="text"  /></td>
-										<td>
-											<select onChange={this.handleOnChangeOption} onFocus={this.handleFocus} id='new_artikel_option' onBlur={this.handleBlur} style={{height: '30px'}} name={''} size="1" value={this.state.newOption} >
-												<option value="Normal">Normal</option>
-												<option value="Eil">Eil</option>
-												<option value="JIT">JIT</option>
-												<option value="Billiganbieter">Billiganbieter</option>
-												<option value="Sonderbestellung">Sonderbestellung</option>
-											</select>	
-										</td>
-									</tr>
-									<tr>
-										<td>
+						
+
+									{/* <tr id='1234'>
+										<td id='1234AAA'>
 											<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
 													background: 'rgb(250, 149, 129)',
 													border: '2px solid ghostwhite',
@@ -699,11 +682,14 @@ class Bestellungen extends Component {
 											<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
 												background: 'rgb(250, 149, 129)',
 												border: '2px solid ghostwhite',
-												color: 'ghostwhite',
+												color: 'white',
 												margin: '5px',
 												position: 'relative',
 												top: '2px',
-											}}> {this.props.t('orders.buttonreset')} </Button>
+												width: '57px'
+											}}> 
+											<Icon name='undo' />
+											</Button>
 										</td>
 										<td style={{ position: 'relative'}}>
 											<Button className='myButtons backgroundColor1'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
@@ -716,7 +702,7 @@ class Bestellungen extends Component {
 												</Link>
 												</Button>
 											</td>
-											</tr>
+											</tr> */}
 										</tbody>
 										</table>
 									</td>
@@ -724,21 +710,118 @@ class Bestellungen extends Component {
 							</tbody>
 						</div>
 						</table>
+
+						<div style={{
+							marginTop:'20px',
+							height:'112px',
+							width:'600px',
+						  paddingTop:'5px',
+							color: 'ghostwhite',
+							position: 'relative',
+							left: '107px',
+							border: '2px solid white',
+							
+							}}
+							className='backgroundColor2'
+						>
+							<div style={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
+								<h3> neuen Artikel hinzufügen</h3>
+							</div>
+							<div style={{display:'flex', justifyContent:'center', }}>
+								<div style={{}}>
+									{/* <p> neuen Artikel hinzufügen</p> */}
+								</div>
+								<table style={{width:'595px'}}>
+									<tbody>
+									<tr >
+										{/* <div style={{position:'relative'}}>
+										<br></br>
+										</div> */}
+									</tr>
+									<tr>
+										<td style={{ width:'140px'}}> 
+										 <p style={{position:'relative', left:'12px'}}>
+											{bezeichnerKaufteile[this.state.newArtikel]}
+											 
+										 </p>
+										</td>
+										<td style={{ width:'25px', position: 'relative', right: '-11px'}}><input id='newArtikel' onChange={this.handleOnChangeNewArtikel}style={{ margin: '0 5px 0 0 '}} tabIndex='' autoComplete='off' size="4"  value={this.state.newArtikel} maxLength="5" type="text"  /></td>
+										<td style={{ width:'25px', position:'relative', right:'7px'}}><input onChange={this.handleOnChangeAmount} onFocus={this.handleFocus} id='new_artikel_amount' onBlur={this.handleBlur} style={{ margin: '0 5px 0 0 '}} autoComplete='off' size="4" name={''} value={this.state.newMenge} maxLength="5" type="text"  /></td>
+										<td style={{ width:'25px', position:'relative', right:'23px'}}>
+											<select onChange={this.handleOnChangeOption} onFocus={this.handleFocus} id='new_artikel_option' onBlur={this.handleBlur} style={{height: '30px'}} name={''} size="1" value={this.state.newOption} >
+												<option value="Normal">Normal</option>
+												<option value="Eil">Eil</option>
+												<option value="JIT">JIT</option>
+												<option value="Billiganbieter">Billiganbieter</option>
+												<option value="Sonderbestellung">Sonderbestellung</option>
+											</select>	
+										</td>
+										<td style={{width:'25px'}}>  <Icon size='large' name='add circle' onClick={this.onCreateNewItem}/> </td>
+
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div style={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
+									<Button className='myButtons backgroundColor1 marginRight'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{ margin: '5px 0 0 0 ',
+													background: 'rgb(250, 149, 129)',
+													border: '2px solid ghostwhite',
+													color: 'ghostwhite',
+													marginRight: '10px'
+												}}>
+
+											<Link style={{ color: 'ghostwhite' }}to='/Fertigungsaufträge'>
+												{this.props.t('orders.buttonback')}
+											</Link>
+
+										</Button>
+
+										<Button className='myButtons backgroundColor1 marginRight'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  onClick={this.handleReset} style={{
+												background: 'rgb(250, 149, 129)',
+												border: '2px solid ghostwhite',
+												color: 'white',
+												margin: '5px',
+												position: 'relative',
+												top: '2px',
+												width: '57px',
+												marginRight: '10px'
+											}}> 
+											{/* {this.props.t('orders.buttonreset')}  */}
+											<Icon name='undo' />
+										</Button>
+
+										<Button className='myButtons backgroundColor1 marginRight'    onFocus={ this.handleFocus} onBlur={this.handleBlur}  style={{  margin: '5px 0 0 0 ' ,
+												background: 'rgb(250, 149, 129)',
+												border: '2px solid ghostwhite',
+												color: 'ghostwhite',
+												marginRight: '10px'
+												}}>
+												<Link style={{ color: 'ghostwhite' }}to='/Arbeitszeiten'>
+													{this.props.t('orders.buttonforward')}
+												</Link>
+												</Button>
+
+									</div>
+									<div style={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
+										<Button className='myButtons backgroundColor1' 
+											id='product1_button'
+												style={{ marginLeft: '20px' ,
+												background: 'rgb(250, 149, 129)',
+												border: '2px solid ghostwhite',
+												color: 'ghostwhite',
+												margin: '20px',
+												position: 'relative',
+
+												}}
+												onClick={this.anzeigenExpertModus}
+
+													> Expert modus 
+										</Button>
+
+									</div>
 					</div>
-						<Button className='myButtons backgroundColor1' 
-							id='product1_button'
-								style={{ marginLeft: '20px' ,position: '', right: '35%',
-								background: 'rgb(250, 149, 129)',
-								border: '2px solid ghostwhite',
-								color: 'ghostwhite',
-								margin: '20px',
-								position: 'relative',
-								right: '-350px'
-
-								}}
-								onClick={this.anzeigenExpertModus}
-
-									> Expert modus </Button>
 							{/* > {this.props.t('fertigungsauftraege.calcview')}</Button> */}
 								{/* ugur */}
 						{ !this.state.erklärung && (

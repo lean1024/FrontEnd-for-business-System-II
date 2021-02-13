@@ -1490,9 +1490,25 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
         return dispo_dict
     }
 
-    anzeigenBerrechnungProdukt1 = () => this.setState({ displayProdukt1: !this.state.displayProdukt1})
-    anzeigenBerrechnungProdukt2 = () => this.setState({ displayProdukt2: !this.state.displayProdukt2})
-    anzeigenBerrechnungProdukt3 = () => this.setState({ displayProdukt3: !this.state.displayProdukt3})
+    reSizeTableOnBerrechnungAnzeigen = () => {
+        let variable = document.getElementById('bigTableDiv').style.right
+        variable.length == 0 
+            ? document.getElementById('bigTableDiv').style.right = '320px'
+            : document.getElementById('bigTableDiv').style.right = ''
+    }
+
+    anzeigenBerrechnungProdukt1 = () => {
+        this.reSizeTableOnBerrechnungAnzeigen();
+        this.setState({ displayProdukt1: !this.state.displayProdukt1})
+    }
+    anzeigenBerrechnungProdukt2 = () => {
+        this.reSizeTableOnBerrechnungAnzeigen();
+        this.setState({ displayProdukt2: !this.state.displayProdukt2}
+    )}
+    anzeigenBerrechnungProdukt3 = () => {
+        this.reSizeTableOnBerrechnungAnzeigen();
+        this.setState({ displayProdukt3: !this.state.displayProdukt3}
+    )}
 
     epsProdukt1 = () => {
         if (!this.state.epsProdukt1Angewand ) this.stücklistenAuflösungReduktion(1);
@@ -2244,9 +2260,9 @@ var waiting_list = this.get_waitinglist_by_producing_items(this.state.xml)
         return (
             <React.Fragment>
                 {/* <div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , background: ' repeating-linear-gradient(45deg, #ffffff3b, transparent 100px)'}}> */}
-                <div style={{ padding: '30px', margin: '0px 115px 0 120px' , border: '2px solid white' , }}>
+                <div style={{ padding: '30px', margin: '0px 115px 0 120px'  }}>
                 <table style={{backgroundColor:'#c1c1bf',margin:'auto' }}>
-                <div style={{ border: '3px solid#f0f0f0'}}>
+                <div className='backgroundColor2' id='bigTableDiv' style={{ border: '3px solid#f0f0f0', padding: '0px 30px 35px 30px', position:'relative'}}>
                     <tbody>
                     <tr style={{visibility: 'hidden'}}> hello</tr>
                     <tr style={{visibility: 'hidden'}}> hello</tr>

@@ -141,11 +141,12 @@ class App extends Component {
                                         </Link>
                                     </li>
 
-                                    <li>
-                                        <div><b>{getLanguage()}</b></div>
-                                        <br/>
-                                        <button onClick={() => this.changeLang('de')}>DE</button>
-                                        <button onClick={() => this.changeLang('en')}>EN</button>
+                                    <li  style={{ ...navbarItemStyle, ...displayNoneStyle , paddingTop:'6px'}}>
+                                        {/* <div><b>{getLanguage()}</b></div> */}
+                                        {/* <br/> */}
+                                        <span style={{marginRight:'5px'}}>{this.props.t('navbar.sprachen')}</span>
+                                        <button style={{marginRight:'5px', background: 'white', color: 'lightslategrey'}} onClick={() => this.changeLang('de')}>DE</button>
+                                        <button style={{background: 'white', color: 'lightslategrey'}} onClick={() => this.changeLang('en')}>EN</button>
                                     </li>
 
                                 </ul>

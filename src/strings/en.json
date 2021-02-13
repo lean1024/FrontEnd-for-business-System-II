@@ -8,7 +8,8 @@
     "arbeitszeiten": "Working hours",
     "reihenfolge": "Sequence",
     "output": "Export data",
-    "help": "Help"
+    "help": "Help",
+    "sprachen": "Language"
   },
   "prognosen": {
     "vertriebswunsch": "Sales request",
